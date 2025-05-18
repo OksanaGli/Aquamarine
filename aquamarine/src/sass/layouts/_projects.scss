@@ -1,0 +1,99 @@
+.projects-hidden {
+  display: none;
+}
+
+.projects {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px; 
+
+  height: 100vh; 
+  overflow-y: auto; 
+  scrollbar-width: none;      
+  -ms-overflow-style: none;  
+}
+
+.projects::-webkit-scrollbar {
+  display: none;               
+}
+
+.projects__selection {
+  @include font($size: 1.2rem, $height: 1.5rem);
+  text-transform: uppercase;
+  width: 151px;
+  box-sizing: border-box;
+  padding: 7.5px 28px 7.5px 20px;
+  border: none;
+  background-color: transparent;
+  align-self: center;
+  cursor: pointer; 
+  color:$color-active;
+  background-image: url(../img/icon/triangle-down.svg);
+  background-position: right 13px center ;
+  background-repeat: no-repeat;  
+}
+
+.projects__panel {
+  //display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: $color-background;
+  padding: 30px 10px 20px 0;
+  max-width: 880px;
+  width: 100%;
+}
+
+.projects__list {
+  display: flex;
+  flex-direction: column;    
+}
+
+.projects__link {  
+  display: flex;
+  text-transform: uppercase;  
+  text-decoration: none;
+  color: $color-inactive;
+  padding-bottom: 10px;
+}
+
+.active-link {
+  color: $color-active;
+  @extend %transition;
+
+  .projects__quantity {
+    padding-left: 18px;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      content: "";
+      left: 1px;
+      bottom: 9px;
+      width: 13px;
+      height: 1px;
+      background-color: $color-active;
+    }
+  }
+}
+
+.projects__name {
+  margin: 0;
+  max-width: 445px;
+  width: 100%;
+}
+
+.projects-single {
+  margin-top: 4px;
+}
+
+.projects-list {
+  margin-top: 480px;
+}
+
+.projects-single__list,
+.projects-list__list {
+  display: flex;
+  flex-direction: column;
+}

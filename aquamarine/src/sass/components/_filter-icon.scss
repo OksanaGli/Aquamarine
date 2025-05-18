@@ -1,0 +1,23 @@
+.filter-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 21px 0 21px;
+}
+
+.filter-icons__button {
+  width: 28px;
+  height: 21px;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.icon {
+  fill: $color-inactive; 
+}
+
+.icon-active .icon {
+  fill: $color-active;
+}

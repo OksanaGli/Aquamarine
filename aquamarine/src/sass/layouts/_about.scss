@@ -1,0 +1,23 @@
+.about {
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+
+  height: 100vh; 
+  overflow-y: auto;   
+  scrollbar-width: none;      
+  -ms-overflow-style: none;  
+}
+
+.about::-webkit-scrollbar {
+  display: none;               
+}
+
+.about__description {
+  margin: 0 0 445px 0;
+}
+
+.about__title {
+  margin: 0;
+  text-align: center;
+}

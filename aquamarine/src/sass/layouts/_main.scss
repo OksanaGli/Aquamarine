@@ -1,0 +1,37 @@
+.main {
+  display: grid;
+  grid-template-columns: 70px minmax(320px, 880px) 20px minmax(320px, 880px) 70px;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.filter-icons {
+  grid-column: 1;
+}
+
+.projects {
+  grid-column: 2; 
+}
+
+.gap-column {
+  grid-column: 3;
+}
+
+.about {
+  grid-column: 4;  
+}
+
+.menu {
+  grid-column: 5;
+}
+
+.active {  
+  pointer-events: auto;
+  user-select: auto;  
+}
+
+.inactive { 
+  pointer-events: none;
+  user-select: none;  
+  color: $color-inactive
+}

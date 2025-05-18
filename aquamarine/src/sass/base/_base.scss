@@ -1,0 +1,28 @@
+.page {
+  height: 100%;
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+  
+.page__body {
+  @extend %font;
+  @include font($size: 1.5rem, $height: 2rem);
+  color: $color-active;
+  background-color: $color-background;
+  margin: 0;  
+} 
+
+.page__wrapper {
+  margin: 0 auto;
+  max-width: $content-width;
+  width: 100%;
+  min-height: 100%;
+}
+
+.visually-hidden {
+  @include visually-hidden(); 
+}
+  
+.reset-list {
+  @include reset-list(); 
+}
