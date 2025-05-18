@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="filter-single" width="28" height="21" viewBox="0 0 28 21">
+    <rect x="28" width="2" height="28" transform="rotate(90 28 0)"/>
+    <rect y="4" width="28" height="13"/>
+    <rect x="28" y="19" width="2" height="28" transform="rotate(90 28 19)"/>
+  </symbol>
+
+  <symbol id="filter-list" width="28" height="21" viewBox="0 0 28 21">
+    <rect x="5" y="7" width="23" height="2"/>
+    <rect x="5" y="2" width="23" height="2"/>
+    <rect y="7" width="3" height="2"/>
+    <rect y="2" width="3" height="2"/>
+    <rect x="5" y="12" width="23" height="2"/>
+    <rect y="12" width="3" height="2"/>
+    <rect x="5" y="17" width="23" height="2"/>
+    <rect y="17" width="3" height="2"/>
+  </symbol>
+
+  <symbol id="filter-map" width="28" height="21" viewBox="0 0 28 21">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.6364 21C13.6364 21 21.2727 12.0098 21.2727 7.73684C21.2727 3.4639 17.8538 0 13.6364 0C9.41892 0 6 3.4639 6 7.73684C6 12.0098 13.6364 21 13.6364 21ZM13.6364 12.4091C16.2723 12.4091 18.4091 10.2723 18.4091 7.63636C18.4091 5.00046 16.2723 2.86364 13.6364 2.86364C11.0005 2.86364 8.86364 5.00046 8.86364 7.63636C8.86364 10.2723 11.0005 12.4091 13.6364 12.4091Z"/>
+  </symbol>  
+</svg>
