@@ -119,11 +119,6 @@
   padding: 7px 20px;
   background-color: #e3e9f1;
   border-radius: 20px;
-  white-space: nowrap;
-}
-
-.card__image-wrapper {
-  display: flex;
 }
 
 .card__image {
@@ -142,14 +137,15 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 2px;
-  width: 51%;
+  max-width: 23.4vw;
+  width: 100%;
 }
 
-.card__location {
+.card__location-wrapper {
   display: flex;
 }
 
-.card__time {
+.card__construction {
   display: flex;
 }
 
@@ -160,16 +156,14 @@
   font-style: normal;
   text-transform: uppercase;
   margin: 0;
-  white-space: nowrap;
 }
 
 .card__title {
   margin: 0;
-  white-space: nowrap;
 }
 
 .card--single .card__item {
-  margin-bottom: 500px;
+  padding-bottom: 500px;
 }
 .card--single .card__image-wrapper {
   margin-bottom: 10px;
@@ -177,20 +171,17 @@
 .card--single .card__wrapper {
   justify-content: space-between;
 }
-.card--single .card__location {
+.card--single .card__location-wrapper {
   flex-direction: column;
-  width: 15vw;
+  max-width: 22.4vw;
+  width: 100%;
 }
-.card--single .card__time {
-  text-align: end;
-}
-.card--single .card__title--list {
-  display: none;
-}
-.card--single .card__description {
+.card--single .card__location {
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 5px;
 }
-.card--single .card__description--list {
+.card--single .card__description--single {
   display: none;
 }
 .card--list .card__item {
@@ -202,27 +193,17 @@
   height: auto;
   overflow: hidden;
 }
-.card--list .card__image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
 .card--list .card__tags {
   display: none;
 }
 .card--list .card__location {
+  display: flex;
   margin: 0;
   width: 12.8vw;
   padding-left: 20px;
   box-sizing: border-box;
 }
-.card--list .card__title--single {
-  display: none;
-}
-.card--list .card__description--single {
-  display: none;
-}
-.card--list .card__time {
+.card--list .card__construction {
   flex-direction: column;
 }
 .card--list .card__description span {
@@ -234,6 +215,9 @@
   font-weight: 500;
   font-style: normal;
   margin: 0 0 10px 0;
+}
+.card--list .card__description--list {
+  display: none;
 }
 
 .main {
@@ -321,6 +305,13 @@
   padding: 30px 10px 20px 0;
   max-width: 880px;
   width: 100%;
+  z-index: 100;
+  transform: translateY(-100%);
+  pointer-events: none;
+  transition: transform 0.4s, visibility 0.4s;
+}
+.projects__panel--opened {
+  transform: translateY(0);
 }
 
 .projects__list {

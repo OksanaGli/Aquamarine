@@ -1,7 +1,3 @@
-.card__image-wrapper {
-  display: flex;
-}
-
 .card__image {
   display: block;  
   width: 100%;
@@ -18,64 +14,56 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 2px;
-  width: 51%;    
+  max-width: 23.4vw;
+  width: 100%; 
 }
 
-.card__location {
+.card__location-wrapper {
   display: flex; 
 }
 
-.card__time {
+.card__construction {
   display: flex;
 }
 
 .card__description {
   @include font($size: 1.2rem, $height: 1.5rem, $weight: 500);
   text-transform: uppercase;
-  margin: 0;
-  white-space: nowrap;
+  margin: 0;  
 }
 
 .card__title {
-  margin: 0;
-  white-space: nowrap;
+  margin: 0;    
 }
 
 .card {    
   &--single {
     .card__item {
-      margin-bottom: 500px;
+      padding-bottom: 500px;     
     }
 
     .card__image-wrapper {
       margin-bottom: 10px;
     }
 
-    .card__wrapper {      
-      justify-content: space-between;            
+    .card__wrapper {        
+      justify-content: space-between;              
     } 
 
-    .card__location {      
-      flex-direction: column;
-      width: 15vw;
+    .card__location-wrapper {      
+      flex-direction: column; 
+      max-width: 22.4vw;    
+      width: 100%;   
     }
 
-    .card__time {
-      text-align: end;
-    }
-
-    .card__title {
-      &--list {
-        display: none;
-      }
-    } 
-
+    .card__location {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px;      
+    }  
+    
     .card__description {
-      margin-bottom: 5px;
-    }
-
-    .card__description {
-      &--list {
+      &--single {
         display: none;
       }
     }
@@ -92,47 +80,36 @@
       height: auto;
       overflow: hidden;
     }
-
-    .card__image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;      
-    }    
-
+    
     .card__tags {
       display: none;
     }
 
-    .card__location {    
+    .card__location {      
+      display: flex;
       margin: 0;
       width: 12.8vw;           
       padding-left: 20px;  
-      box-sizing: border-box;
-    }  
-
-    .card__title {
-      &--single {
-        display: none;
-      }
+      box-sizing: border-box;      
     }
 
-    .card__description {
-      &--single {
-        display: none;
-      }
-    }
-
-    .card__time {      
+    .card__construction {
       flex-direction: column;
-    }      
-
+    }
+  
     .card__description span {
       display: block;
     }
 
     .card__title {
       @include font($size: inherit, $height: inherit, $weight: 500);
-      margin: 0 0 10px 0;
+      margin: 0 0 10px 0;       
+    }
+
+    .card__description {
+      &--list {
+        display: none;
+      }
     }
   }
 }
