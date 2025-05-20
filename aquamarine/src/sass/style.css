@@ -100,103 +100,6 @@
   fill: #2c4259;
 }
 
-.cards-single {
-  margin-bottom: 500px;
-}
-
-.cards-single__image-wrapper {
-  margin-bottom: 10px;
-}
-
-.cards-single__image {
-  display: block;
-}
-
-.cards-single__wrapper {
-  display: flex;
-  justify-content: space-between;
-}
-
-.cards-single__tags {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.cards-single__description-wrapper {
-  display: flex;
-  flex-direction: column;
-  padding-top: 7px;
-  max-width: 431px;
-  width: 100%;
-}
-
-.cards-single__description-container {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 5px;
-}
-
-.cards-single__description,
-.cards-list__description {
-  font-size: 1.2rem;
-  line-height: 1.5rem;
-  font-weight: 500;
-  font-style: normal;
-  text-transform: uppercase;
-  margin: 0;
-}
-
-.cards-single__title {
-  margin: 0;
-}
-
-.cards-list {
-  display: flex;
-  margin-bottom: 40px;
-}
-
-.cards-list__wrapper {
-  display: flex;
-  flex-shrink: 0;
-}
-
-.cards-list_image {
-  display: block;
-}
-
-.cards-list__location {
-  margin: 0;
-  max-width: 245px;
-  width: 100%;
-  flex-shrink: 0;
-  font-size: 1.2rem;
-  line-height: 1.5rem;
-  font-weight: 500;
-  font-style: normal;
-  text-transform: uppercase;
-  padding-left: 20px;
-  box-sizing: border-box;
-}
-
-.cards-list__container {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
-.cards-list__title {
-  font-size: inherit;
-  line-height: inherit;
-  font-weight: 500;
-  font-style: normal;
-  margin: 0 0 10px 0;
-}
-
-.cards-list__description span {
-  display: block;
-}
-
 .heading {
   font-size: 2.1rem;
   line-height: 2.5rem;
@@ -208,6 +111,7 @@
 }
 
 .tag {
+  display: inline-block;
   font-size: 1.2rem;
   line-height: 1.5rem;
   font-weight: 400;
@@ -215,6 +119,121 @@
   padding: 7px 20px;
   background-color: #e3e9f1;
   border-radius: 20px;
+  white-space: nowrap;
+}
+
+.card__image-wrapper {
+  display: flex;
+}
+
+.card__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card__wrapper {
+  display: flex;
+}
+
+.card__tags {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  width: 51%;
+}
+
+.card__location {
+  display: flex;
+}
+
+.card__time {
+  display: flex;
+}
+
+.card__description {
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  font-weight: 500;
+  font-style: normal;
+  text-transform: uppercase;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.card__title {
+  margin: 0;
+  white-space: nowrap;
+}
+
+.card--single .card__item {
+  margin-bottom: 500px;
+}
+.card--single .card__image-wrapper {
+  margin-bottom: 10px;
+}
+.card--single .card__wrapper {
+  justify-content: space-between;
+}
+.card--single .card__location {
+  flex-direction: column;
+  width: 15vw;
+}
+.card--single .card__time {
+  text-align: end;
+}
+.card--single .card__title--list {
+  display: none;
+}
+.card--single .card__description {
+  margin-bottom: 5px;
+}
+.card--single .card__description--list {
+  display: none;
+}
+.card--list .card__item {
+  display: flex;
+  margin-bottom: 40px;
+}
+.card--list .card__image-wrapper {
+  width: 205px;
+  height: auto;
+  overflow: hidden;
+}
+.card--list .card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card--list .card__tags {
+  display: none;
+}
+.card--list .card__location {
+  margin: 0;
+  width: 12.8vw;
+  padding-left: 20px;
+  box-sizing: border-box;
+}
+.card--list .card__title--single {
+  display: none;
+}
+.card--list .card__description--single {
+  display: none;
+}
+.card--list .card__time {
+  flex-direction: column;
+}
+.card--list .card__description span {
+  display: block;
+}
+.card--list .card__title {
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: 500;
+  font-style: normal;
+  margin: 0 0 10px 0;
 }
 
 .main {
@@ -294,6 +313,7 @@
 }
 
 .projects__panel {
+  display: none;
   position: absolute;
   top: 0;
   left: 0;
@@ -343,12 +363,11 @@
   margin-top: 4px;
 }
 
-.projects-list {
+.card--list {
   margin-top: 480px;
 }
 
-.projects-single__list,
-.projects-list__list {
+.projects-card__list {
   display: flex;
   flex-direction: column;
 }

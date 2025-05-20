@@ -35,7 +35,7 @@
 }
 
 .projects__panel {
-  //display: none;
+  display: none;
   position: absolute;
   top: 0;
   left: 0;
@@ -88,12 +88,11 @@
   margin-top: 4px;
 }
 
-.projects-list {
-  margin-top: 480px;
+.card--list {
+  margin-top: 480px;    
 }
 
-.projects-single__list,
-.projects-list__list {
+.projects-card__list {
   display: flex;
   flex-direction: column;
 }
