@@ -3,7 +3,6 @@
 }
 
 .projects {
-  position: relative;
   display: flex;
   flex-direction: column;
   padding-top: 10px; 
@@ -34,18 +33,24 @@
   background-repeat: no-repeat;  
 }
 
-.projects__panel {
-  display: none;
+.projects__panel {    
   position: absolute;
   top: 0;
-  left: 0;
+  left: 70px;
   background-color: $color-background;
   padding: 30px 10px 20px 0;
   max-width: 880px;
   width: 100%;
+  z-index: 100;
+  transform: translateY(-100%);
+  @extend %transition;
+
+  &--opened{
+    transform: translateY(0);
+  }
 }
 
-.projects__list {
+.projects__list {  
   display: flex;
   flex-direction: column;    
 }
@@ -55,26 +60,27 @@
   text-transform: uppercase;  
   text-decoration: none;
   color: $color-inactive;
-  padding-bottom: 10px;
-}
+  padding-bottom: 10px;   
+  cursor: pointer;
 
-.active-link {
-  color: $color-active;
-  @extend %transition;
+  &:hover,
+  &.active-link { 
+    color: $color-active;  
+  
+    .projects__quantity {
+      padding-left: 18px;
+      position: relative;
 
-  .projects__quantity {
-    padding-left: 18px;
-    position: relative;
-
-    &::before {
-      position: absolute;
-      content: "";
-      left: 1px;
-      bottom: 9px;
-      width: 13px;
-      height: 1px;
-      background-color: $color-active;
-    }
+      &::before {
+        position: absolute;
+        content: "";
+        left: 1px;
+        bottom: 9px;
+        width: 13px;
+        height: 1px;
+        background-color: $color-active;
+      }
+    }    
   }
 }
 
@@ -84,12 +90,17 @@
   width: 100%;
 }
 
-.projects-single {
-  margin-top: 4px;
+.projects__image {
+  position: absolute;
+  top: 167px;
+  left: 788px;
+  display: block;  
+  height: auto;
+  object-fit: cover; 
 }
 
-.card--list {
-  margin-top: 480px;    
+.projects-single {
+  margin-top: 4px;
 }
 
 .projects-card__list {
