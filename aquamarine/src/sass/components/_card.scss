@@ -14,12 +14,12 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 2px;
-  max-width: 23.4vw;
+  max-width: 49%;
   width: 100%; 
 }
 
 .card__location-wrapper {
-  display: flex; 
+  display: flex;   
 }
 
 .card__construction {
@@ -38,8 +38,10 @@
 
 .card {    
   &--single {
+    margin-top: 4px;
+
     .card__item {
-      padding-bottom: 500px;     
+      padding-bottom: 500px;           
     }
 
     .card__image-wrapper {
@@ -47,22 +49,26 @@
     }
 
     .card__wrapper {        
-      justify-content: space-between;              
+      justify-content: space-between;
+      gap: 17px;              
     } 
 
     .card__location-wrapper {      
       flex-direction: column; 
-      max-width: 22.4vw;    
+      max-width: 49%;    
       width: 100%;   
     }
 
     .card__location {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 5px;      
+      margin-bottom: 5px;    
+      width: 100%;  
     }  
     
     .card__description {
+      max-width: 49%;
+
       &--single {
         display: none;
       }
@@ -70,6 +76,8 @@
   }
 
   &--list {
+    margin-top: 480px; 
+
     .card__item {
       display: flex; 
       margin-bottom: 40px;           
@@ -77,8 +85,18 @@
 
     .card__image-wrapper {
       width: 205px;
-      height: auto;
+      // height: auto;
       overflow: hidden;
+    }
+
+    .card__image {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .card__wrapper {
+      flex: 1 1 0;
     }
     
     .card__tags {
@@ -89,12 +107,14 @@
       display: flex;
       margin: 0;
       width: 12.8vw;           
-      padding-left: 20px;  
+      padding-left: 1.04vw; 
+      padding-right: 1.04vw; 
       box-sizing: border-box;      
     }
 
     .card__construction {
       flex-direction: column;
+      flex: 1 1 0;
     }
   
     .card__description span {
