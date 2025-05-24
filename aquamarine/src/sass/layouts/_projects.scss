@@ -53,6 +53,10 @@
   flex-direction: column;    
 }
 
+.projects__item:not(:hover) .projects__image {
+  display: none;
+}
+
 .projects__link {  
   display: flex;
   text-transform: uppercase;  
