@@ -1,6 +1,53 @@
 .menu {
   position: relative;
   display: flex;
-  flex-direction: column;
-  padding: 20px 20px 0 20px;
+  width: 70px;
+  
+  &__wrapper {
+    position: fixed;
+    width: 50%;  
+    right: 0; 
+    box-sizing: border-box;
+    height: 70.05vh;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: $color-background; 
+    transform: translateX(calc(100% - 70px));   
+    @extend %transition;
+   
+    &--opened {
+       transform: translateX(0);
+
+      .logo__title {
+        opacity: 1;
+        @extend %transition;
+      }
+    }
+  } 
+
+  &__switch-wrapper {
+    display: flex;
+    flex-direction: column;   
+    justify-content: space-between;
+  }
+
+  &__hamburger-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__switch-language {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    width: 30px;
+  }
+
+  &__social {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
 }

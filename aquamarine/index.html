@@ -31,8 +31,8 @@
       </div>
 
       <section class="projects active">
-        <button class="projects__selection">ALL PROJECTS</button>
-        <div class="projects__panel projects__panel--opened">        
+        <button class="projects__selection" type="button">ALL PROJECTS</button>
+        <div class="projects__panel projects__panel--opened visually-hidden">        
           <ul class="projects__list reset-list">
             <li class="projects__item">
               <a class="projects__link active-link" href="#">
@@ -251,13 +251,66 @@
       </section>
 
       <div class="menu">
-        <button class="hamburger" type="button">
-          <span class="hamburger__line"></span>
-        </button>
-        <button class="language-switcher__toggle" aria-expanded="false">
-          EN <span class="arrow">▲</span>
-        </button>
-        <span></span>
+        <div class="menu__wrapper menu__wrapper--opened">
+          <div class="menu__switch-wrapper">
+            <div class="menu__hamburger-wrapper">
+              <button class="hamburger hamburger__active" type="button" aria-label="Open menu">
+                <span class="hamburger__line "></span>
+              </button>
+              <div class="menu__switch-language menu--open">
+                <div class="lang-select lang-select__current">EN</div>
+                <ul class="lang-select__list reset-list">
+                  <li class="lang-select__item">RU</li>
+                  <li class="lang-select__item">ES</li>
+                </ul>
+              </div>              
+            </div>
+            <div class="logo">
+              <span class="logo__icon"></span>
+              <span class="logo__title"></span>
+            </div>
+          </div>
+          <div class="menu__navigation navigation">
+            <ul class="navigation__list reset-list">
+              <li class="navigation__item">
+                <a class="navigation__link heading heading--upper navigation--current" href="#">About         
+                  <img class="navigation__image" src="./src/img/navigation/about.png" width="180" height="159" alt="About.">
+                </a>
+              </li>
+              <li class="navigation__item">
+                <a class="navigation__link heading heading--upper" href="#">Services      
+                  <img class="navigation__image" src="./src/img/navigation/services.png" width="180" height="101" alt="Services.">
+                </a>
+              </li>
+              <li class="navigation__item">
+                <a class="navigation__link heading heading--upper" href="#">Articles          
+                  <img class="navigation__image" src="./src/img/navigation/articles.png" width="180" height="101" alt="Articles .">
+                </a>
+              </li>
+              <li class="navigation__item">
+                <a class="navigation__link heading heading--upper" href="#">Media library       
+                  <img class="navigation__image" src="./src/img/navigation/library.png" width="180" height="257" alt="Media library.">
+                </a>
+              </li>
+              <li class="navigation__item">
+                <a class="navigation__link heading heading--upper" href="#">Contacts     
+                  <img class="navigation__image" src="./src/img/navigation/contacts.png" width="180" height="180" alt="Contacts.">
+                </a>
+              </li>
+            </ul>
+            <ul class="menu__social social reset-list">
+              <li class="social__item">
+                <a class="social__link" href="#" target="_blank">FB</a>
+              </li>
+              <li class="social__item">
+                <a class="social__link" href="#" target="_blank">IG</a>
+              </li>
+              <li class="social__item">
+                <a class="social__link" href="#" target="_blank">YT</a>
+              </li>
+            </ul>
+          </div>          
+        </div>
       </div>    
     </main> 
   </div>

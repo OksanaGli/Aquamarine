@@ -1,0 +1,33 @@
+.navigation {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 5px;
+  }
+
+  &__item:not(:hover) .navigation__image {
+    display: none;
+  }
+    
+  &__link {
+    color: $color-inactive;
+    text-decoration: none;
+
+    &:hover,
+    &.navigation--current { 
+      color: $color-active; 
+    }
+  }
+  
+  &__image {
+    position: absolute;
+    top: 44%;
+    right: 41%; 
+    transform: translateY(-50%)
+  }
+}
