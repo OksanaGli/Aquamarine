@@ -1,9 +1,10 @@
 .main {
   position: relative;
+  overflow-x: hidden;
   display: grid;
   grid-template-columns: 70px minmax(320px, 880px) 20px minmax(320px, 880px) 70px;
   width: 100%;
-  min-height: 100vh;
+  min-height: 100vh;  
 }
 
 .filter-icons {

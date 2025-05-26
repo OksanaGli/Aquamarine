@@ -16,6 +16,10 @@
   gap: 2px;
   max-width: 49%;
   width: 100%; 
+
+  &--gallery {
+    max-width: none;
+  }
 }
 
 .card__location-wrapper {
