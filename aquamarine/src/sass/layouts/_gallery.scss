@@ -110,7 +110,7 @@
     grid-column: 7/9;
 
     &--title {
-      @include font($size: 1.5rem, $height: 2.0rem, $weight: 500);
+      @include font($size: 1.5rem, $height: 2.0rem, $weight: 700);
     }
 
     &--last {

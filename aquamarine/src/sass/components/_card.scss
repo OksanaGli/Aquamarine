@@ -31,7 +31,7 @@
 }
 
 .card__description {
-  @include font($size: 1.2rem, $height: 1.5rem, $weight: 500);
+  @include font($size: 1.2rem, $height: 1.5rem, $weight: 700);
   text-transform: uppercase;
   margin: 0;  
 }
@@ -45,7 +45,7 @@
     margin-top: 4px;
 
     .card__item {
-      padding-bottom: 500px;           
+      height: calc(100vh - 60px);        
     }
 
     .card__image-wrapper {
@@ -60,7 +60,8 @@
     .card__location-wrapper {      
       flex-direction: column; 
       max-width: 49%;    
-      width: 100%;   
+      width: 100%;  
+      margin-top: 7px; 
     }
 
     .card__location {
@@ -126,7 +127,7 @@
     }
 
     .card__title {
-      @include font($size: inherit, $height: inherit, $weight: 500);
+      @include font($size: 1.5rem, $height: 2.0rem, $weight: 700);
       margin: 0 0 10px 0;       
     }
 
