@@ -1,0 +1,49 @@
+.pages-wrapper {
+  display: flex;
+  flex-direction: column;  
+  
+  height: 100vh; 
+  overflow-y: auto;   
+  scrollbar-width: none;      
+  -ms-overflow-style: none; 
+
+  &::-webkit-scrollbar {
+    display: none;      
+  }
+}
+
+.pages {
+
+  &__header {    
+    &--about {
+      padding-top: 35px;    
+      margin-bottom: 56px; 
+    }    
+  }
+
+  &__description,
+  &__title,
+  &__scroll {
+    margin: 0;
+  }
+
+  &__title-wrapper {
+    display: flex;
+    height: calc(100vh - 598px);
+    padding-top: 530px;
+    justify-content: center;
+
+    &--about {
+      flex-direction: column;
+      height: calc(100vh - 550px);
+      padding: 445px 0 20px 0;    
+      align-items: center;   
+      justify-content: space-between;  
+    }   
+  }
+  
+  &__scroll {    
+    @include font($size: 1.2rem, $height: 1.5rem);  
+    text-transform: uppercase;
+  }  
+}

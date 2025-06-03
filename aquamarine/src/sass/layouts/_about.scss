@@ -1,48 +1,10 @@
-.about-page {
-  display: flex;
-  flex-direction: column;
-  padding-top: 35px;
-  padding-bottom: 20px;
-
-  height: 100vh; 
-  overflow-y: auto;   
-  scrollbar-width: none;      
-  -ms-overflow-style: none; 
-
-  &::-webkit-scrollbar {
-    display: none;               
-  }
-
-  &__main {
-    height: 100vh;
-    margin-bottom: 56px; 
-  }
-
-  &__description,
-  &__title,
-  &__scroll {
-    margin: 0;
-  }
-
-  &__title-wrapper {
-    display: flex;
-    flex-direction: column;
-    height: calc(100vh - 550px);
-    padding: 445px 0 20px 0;    
-    align-items: center;   
-    justify-content: space-between;     
-  }
-  
-  &__scroll {    
-    @include font($size: 1.2rem, $height: 1.5rem);  
-    text-transform: uppercase;
-  }  
-}
-
 .about {
   display: flex;
   flex-direction: column;
-  margin-bottom: 80px;
+  
+  &--last {
+    margin-bottom: 240px;
+  }
 
   &__title {
     margin: 0 0 10px 0;
@@ -111,7 +73,6 @@
     max-width: 23%;
     width: 100%;
     margin: 0;
-    @include font($size: 1.5rem, $height: 2.0rem, $weight: 700);
   }
 
   &__mission-list {
