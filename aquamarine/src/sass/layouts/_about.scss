@@ -1,9 +1,11 @@
 .about {
+  margin-bottom: 80px;
+
   display: flex;
   flex-direction: column;
   
   &--last {
-    margin-bottom: 240px;
+    margin-bottom: 0;
   }
 
   &__title {
@@ -56,6 +58,10 @@
     gap: 20px;
     justify-content: flex-end;
     margin-bottom: 20px;
+    
+    &--history {
+      margin-bottom: 0;     
+    }
 
     &:last-child {
       margin-bottom: 0;
@@ -135,6 +141,7 @@
     justify-content: flex-end;
     gap: 20px;
     width: 100%;
+    margin-bottom: 20px;
   }
 
   &__history-list {    
