@@ -6,7 +6,6 @@
   overflow-y: auto;   
   scrollbar-width: none;      
   -ms-overflow-style: none; 
-
   &::-webkit-scrollbar {
     display: none;      
   }
@@ -15,6 +14,8 @@
 .pages {
 
   &__header {    
+    height: 100vh;
+
     &--about {
       padding-top: 35px;    
       margin-bottom: 56px; 
@@ -29,16 +30,20 @@
 
   &__title-wrapper {
     display: flex;
-    height: calc(100vh - 598px);
-    padding-top: 530px;
+    height: calc(100vh - 49vh - 70px);
+    padding-top: 49vh;
     justify-content: center;
 
     &--about {
       flex-direction: column;
-      height: calc(100vh - 550px);
-      padding: 445px 0 20px 0;    
+      height: calc(100vh - 49vh - 35px);
+      padding-top: 41vh;    
       align-items: center;   
       justify-content: space-between;  
+    }  
+    
+    &--articles {     
+      height: calc(100vh - 49vh - 40px);
     }   
   }
   
