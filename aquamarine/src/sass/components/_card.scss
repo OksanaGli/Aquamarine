@@ -5,6 +5,10 @@
   object-fit: cover;
 }
 
+.card__image-wrapper {
+  display: block;
+}
+
 .card__wrapper {
   display: flex;             
 } 
@@ -74,8 +78,12 @@
     .card__description {
       max-width: 49%;
 
-      &--single {
+      &--single {        
         display: none;
+      }
+
+      &--list {
+        white-space: nowrap;
       }
     }
   }
@@ -86,6 +94,7 @@
     .card__item {
       display: flex; 
       margin-bottom: 40px;           
+      gap: 20px;         
     }
 
     .card__image-wrapper {
@@ -102,18 +111,25 @@
 
     .card__wrapper {
       flex: 1 1 0;
+      max-width: 75%;
+      width: 100%;
     }
     
     .card__tags {
       display: none;
     }
 
+    .card__location-wrapper {
+      max-width: 100%;
+      width: 100%;
+      gap: 20px
+    }
+
     .card__location {      
       display: flex;
       margin: 0;
-      width: 12.8vw;           
-      padding-left: 1.04vw; 
-      padding-right: 1.04vw; 
+      max-width: 31%;  
+      width: 100%;    
       box-sizing: border-box;      
     }
 
