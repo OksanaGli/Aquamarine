@@ -171,6 +171,10 @@ h3 {
   object-fit: cover;
 }
 
+.card__image-wrapper {
+  display: block;
+}
+
 .card__wrapper {
   display: flex;
 }
@@ -208,9 +212,6 @@ h3 {
   margin: 0;
 }
 
-.card .map {
-  display: none;
-}
 .card--single {
   margin-top: 4px;
 }
@@ -241,6 +242,9 @@ h3 {
 }
 .card--single .card__description--single {
   display: none;
+}
+.card--single .card__description--list {
+  white-space: nowrap;
 }
 .card--list {
   margin-top: 60px;
@@ -1122,9 +1126,6 @@ h3 {
   font-weight: 700;
   font-style: normal;
 }
-.gallery__text--last {
-  margin-bottom: 80px;
-}
 .gallery__video {
   position: relative;
   width: 100%;
@@ -1139,6 +1140,9 @@ h3 {
   width: 100%;
   height: 100%;
   border: 0;
+}
+.gallery__text + .gallery__images, .gallery__text + .gallery__video {
+  margin-top: 80px;
 }
 
 .images {
