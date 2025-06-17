@@ -40,7 +40,7 @@
 
   &__main {
     display: grid;
-    grid-template-columns: repeat(8, minmax(150px, 211px));
+    grid-template-columns: repeat(8, minmax(120px, 11.53%));
     column-gap: 20px;
     max-width: 1850px;
     width: 100%;
@@ -50,10 +50,6 @@
     padding-left: 22px;
     box-sizing: border-box;
     margin-top: 20px;
-        
-    @media (max-width: 1440px) {    
-      grid-template-columns: repeat(8, minmax(120px, 151px));
-    }       
   }
 
   &__images {     
