@@ -22,3 +22,11 @@
   clip: rect(0 0 0 0);
   overflow: hidden;
 } 
+
+@mixin media-hover {
+  @media (hover: hover) { @content; }
+}
+
+@mixin media-desktop {
+  @media (max-width: $desktop-width) { @content;}  
+}
