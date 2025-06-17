@@ -13,6 +13,11 @@
   display: flex;             
 } 
 
+.card__item > * {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
 .card__tags {    
   display: flex;  
   flex-direction: column;
@@ -86,6 +91,10 @@
         white-space: nowrap;
       }
     }
+
+    .map {
+      display: none;
+    }
   }
 
   &--list {
@@ -150,6 +159,149 @@
     .card__description {
       &--list {
         display: none;
+      }
+    }
+
+    .map {
+      display: none;
+    }
+  }
+
+  &--map {  
+  
+    .map {      
+      position: absolute;
+      top: 0;
+      left: 70px;  
+      display: flex;
+      max-width: 46%;
+      width: 100%;
+      height: auto;
+      min-height: 100vh;
+      z-index: 800;
+      background-color: $color-background;
+      background-image: url(../img/grid.png), url(../img/grid-h.png);  
+      background-repeat: no-repeat;
+      @extend %transition;
+      overflow: hidden;    
+
+      &__button {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 28px;
+        height: 28px;
+        border-radius: 4px;
+        background-color: transparent;
+        border: 1px solid $color-active;
+        background-image: url(../img/icon/map-arrow.svg);
+        background-repeat: no-repeat;
+        background-position: center;        
+        cursor: pointer;           
+      }
+
+      .carousel__list {
+        transform: translateX(-95%);
+      } 
+
+      &--wide {
+        max-width: 100%;
+        left: 0;
+        @extend %transition; 
+        z-index: 1005;
+
+        .map__button {
+          background-image: url(../img/icon/map-arrow.svg);
+          transform: rotate(180deg);          
+        }
+
+        .carousel__list {
+          transform: translateX(-17%);   
+        }
+
+        .map__wrapper {
+          background-position: 50% 30%; 
+        }
+      }      
+
+      &__wrapper {
+        position: relative;
+        top: 0;
+        left: 0;
+        max-width: 100%;
+        width: 100%;
+        height: 100vh; 
+        background-image: url(../img/world-map.png);         
+        background-repeat: no-repeat;
+        background-position: 80% 30%; 
+        overflow: visible;  
+      }
+
+      &__pin {
+        position: absolute;
+        display: flex;
+        cursor: pointer;
+        transform-origin: center;        
+      }
+
+      &__pin-circle {        
+        width: 10px;
+        height: 10px;
+        background-color: $color-active; 
+        border-radius: 50%;         
+        transition: transform 600ms cubic-bezier(0, 0, 0.2, 1);   
+      }
+
+      @include media-hover {
+        &__pin:hover .map__pin-circle {
+          transform: scale(2);
+        }
+      }
+
+      &__pin-mark {
+        position: absolute;
+        display: flex;        
+        flex-direction: column;
+        margin: 0;
+        gap: 10px;
+        top: -45px; 
+        left: 46px;          
+        @include font($size: 1.2rem, $height: 1.5rem, $weight: 700);  
+        text-transform: uppercase;
+        color: $color-active;
+        white-space: nowrap;
+        transition: opacity 600ms cubic-bezier(0, 0, 0.2, 1);
+        opacity: 0;
+
+        &::before {
+          content: url(../img/icon/underline.svg);
+          position: absolute;
+          top: 16px;
+          right: 0;    
+          transition: opacity 600ms cubic-bezier(0, 0, 0.2, 1);      
+        }
+        
+        & span {       
+          position: relative;   
+          text-align: end;
+
+          &::before {
+            position: absolute;
+            content: "";
+            right: 12px;
+            bottom: 7px;
+            width: 11px;
+            height: 1px;
+            background-color: $color-active;
+            transition: opacity 600ms cubic-bezier(0, 0, 0.2, 1);
+          }
+        }
+      }
+
+      @include media-hover {        
+        &__pin:hover .map__pin-mark {
+          opacity: 1;        
+        }   
       }
     }
   }

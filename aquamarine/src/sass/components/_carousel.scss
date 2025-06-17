@@ -1,0 +1,41 @@
+.carousel {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
+  width: 100%;
+  left: 0;
+  bottom: 20px;
+  overflow-x: hidden;
+
+  &__title {
+    margin: 0 0 10px 0;
+    @include font($size: 1.5rem, $height: 2.0rem, $weight: 700);
+    color: $color-active;
+  }
+
+  &__subtitle {
+    margin: 0 0 25px 0;
+  }
+
+  &__list {
+    display: flex;    
+    flex-wrap: nowrap;
+    width: 100%;    
+    height: 90px;       
+  }
+
+  &__item {
+    display: flex;
+    gap: 10px;
+    margin-right: 80px;
+  }
+
+  &__images {
+    display: block;   
+    height: auto;
+    width: auto;
+    object-fit: cover;
+  }
+}

@@ -28,7 +28,7 @@
   background-image: url(../img/icon/triangle-down.svg);
   background-position: right 13px center ;
   background-repeat: no-repeat;  
-  z-index: 1100;
+  z-index: 900;
 }
 
 .projects__panel {    
@@ -47,6 +47,10 @@
 
   &--opened{
     transform: translateY(0);
+  }
+
+  @include media-desktop {
+    max-width: 45%;
   }
 }
 
@@ -91,7 +95,7 @@
 
 .projects__name {
   margin: 0;
-  max-width: 445px;
+  max-width: 51%;
   width: 100%;
 }
 
@@ -141,5 +145,39 @@
     &--active {
       transform: translateX(0);
     }
+  }
+}
+
+.projects--map {
+  padding-top: 20px;
+  @extend %transition; 
+}
+
+.projects--map-wide {  
+
+  .projects__selection {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1010;
+  }
+
+  .projects__panel {      
+    max-width: 100%;
+    width: 100%;
+    left: 0;      
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+
+  .projects__name {    
+    max-width: 46%;
+    width: 100%;
+  }
+
+  .projects__image {      
+    left: 100%; 
+    transform: translate(-100%, -50%); 
   }
 }
