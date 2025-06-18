@@ -92,7 +92,8 @@
       }
     }
 
-    .map {
+    .map,
+    .carousel {
       display: none;
     }
   }
@@ -162,7 +163,8 @@
       }
     }
 
-    .map {
+    .map,
+    .carousel {
       display: none;
     }
   }
@@ -184,6 +186,10 @@
       background-repeat: no-repeat;
       @extend %transition;
       overflow: hidden;    
+
+      @include media-desktop {
+        max-width: 45%;
+      }
 
       &__button {
         position: absolute;

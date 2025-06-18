@@ -251,7 +251,8 @@ h3 {
 .card--single .card__description--list {
   white-space: nowrap;
 }
-.card--single .map {
+.card--single .map,
+.card--single .carousel {
   display: none;
 }
 .card--list {
@@ -308,7 +309,8 @@ h3 {
 .card--list .card__description--list {
   display: none;
 }
-.card--list .map {
+.card--list .map,
+.card--list .carousel {
   display: none;
 }
 .card--map .map {
@@ -325,6 +327,11 @@ h3 {
   background-image: url(../img/grid.png), url(../img/grid-h.png);
   background-repeat: no-repeat;
   overflow: hidden;
+}
+@media (max-width: 1440px) {
+  .card--map .map {
+    max-width: 45%;
+  }
 }
 .card--map .map__button {
   position: absolute;
