@@ -6,7 +6,7 @@
     &__container {
       position: fixed; 
       top: 0;
-      right: calc((100% - 1920px) / 2); 
+      right: 0; 
       width: 70px; 
       height: 100vh; 
       z-index: 1000; 
@@ -14,7 +14,8 @@
 
     &__wrapper {
       position: absolute; 
-      width: calc(1920px / 2); 
+      width: 50vw; 
+      transform: translateX(calc(50vw - 70px)); 
       height: 100%; 
       right: 0; 
       box-sizing: border-box;
@@ -22,7 +23,7 @@
       justify-content: space-between;
       padding: 20px;
       background-color: $color-background; 
-      transform: translateX(calc((1920px / 2) - 70px)); 
+      transform: translateX(calc(50vw - 70px)); 
       @extend %transition; 
 
       &--opened {
@@ -34,20 +35,6 @@
         }
       }
     }
-      
-    @media (max-width: 1920px) {
-      &__container {
-        right: 0; 
-      }
-      &__wrapper {
-        width: 50vw; 
-        transform: translateX(calc(50vw - 70px)); 
-        &--opened {
-          transform: translateX(0); 
-        }
-      }
-    }
-  
   
 
   &__switch-wrapper {

@@ -7,6 +7,10 @@
   overflow-y: auto; 
   scrollbar-width: none;      
   -ms-overflow-style: none;  
+
+  @include media-desktop-medium {    
+    overflow-y: hidden;      
+  }
 }
 
 .projects::-webkit-scrollbar {
@@ -37,8 +41,7 @@
   left: 70px;
   background-color: $color-background;
   padding: 30px 10px 20px 0;
-  max-width: 46%;
-  width: 100%;
+  width: calc(50vw - 70px);  
   z-index: 100;
   transform: translateY(-100%);
   @extend %transition;
@@ -47,10 +50,6 @@
 
   &--opened{
     transform: translateY(0);
-  }
-
-  @include media-desktop {
-    max-width: 45%;
   }
 }
 
@@ -97,6 +96,10 @@
   margin: 0;
   max-width: 51%;
   width: 100%;
+
+  //@include media-desktop {
+    //max-width: 55%;
+  //}
 }
 
 .projects__image {
@@ -122,8 +125,7 @@
   position: absolute;
   display: flex;
   flex-direction: column;
-  width: min(calc(1920px * 0.964), calc(100% - 70px));
-  max-width: 1850px;
+  max-width: calc(100% - 70px);  
   height: 100vh;
   top: 0;
   left: 0;
@@ -137,14 +139,6 @@
     transform: translateX(0);
     @extend %transition; 
     visibility: visible;
-  }
-
-  @media (max-width: 1920px) {
-    width: calc(100% - 70px); 
-    transform: translateX(calc(-100%));
-    &--active {
-      transform: translateX(0);
-    }
   }
 }
 

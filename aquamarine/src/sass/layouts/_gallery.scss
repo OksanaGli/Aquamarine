@@ -40,10 +40,8 @@
 
   &__main {
     display: grid;
-    grid-template-columns: repeat(8, minmax(120px, 11.53%));
-    column-gap: 20px;
-    max-width: 1850px;
-    width: 100%;
+    grid-template-columns: repeat(8, minmax(120px, 1fr));
+    column-gap: 20px;        
     justify-content: start;
     justify-items: stretch;
     align-items: start; 
