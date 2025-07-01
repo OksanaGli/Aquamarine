@@ -21,6 +21,19 @@
     @extend %hamburger-line;
     top: 5px;
     left: 0;
+
+    @include media-mobile {   
+      top: 10px;
+    }
+  }
+
+  @include media-desktop-medium {
+    margin-bottom: 0;
+  }
+
+  @include media-mobile {   
+    width: 25px;
+    height: 25px;
   }
 }
 
@@ -28,7 +41,10 @@
   @extend %hamburger-line;
   left: 0;
   bottom: 5px;
-  
+
+  @include media-mobile {   
+    bottom: 10px;
+  }
 }
 
 .hamburger__active {
@@ -36,11 +52,19 @@
   >.hamburger__line {
     transform: rotate(-45deg) translate(3px, -3px);
     transition: 500ms cubic-bezier(0, 0, 0.2, 1);
+
+    @include media-mobile {   
+      transform: rotate(-45deg) translate(1px, -1px);
+    }
   }
 
   &::before {    
     transform: rotate(45deg) translate(3px, 3px);
     transition: 500ms cubic-bezier(0, 0, 0.2, 1);
+
+    @include media-mobile {   
+      transform: rotate(45deg) translate(1px, 1px);
+    }
   }  
 }
 
