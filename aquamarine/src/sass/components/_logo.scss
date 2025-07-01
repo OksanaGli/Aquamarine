@@ -9,6 +9,10 @@
     background-image: url(../img/icon/logo.svg);
     background-repeat: no-repeat;
     background-position: left 0 center;    
+    
+    @include media-mobile {   
+      background-image: url(../img/icon/logo-mobile.svg);
+    }
   }
 
   &__title {
@@ -18,5 +22,9 @@
     background-repeat: no-repeat;
     background-position: left 0 center;
     opacity: 0;
+
+    @include media-mobile {   
+      background-image: url(../img/icon/aquamarine-mobile.svg);
+    }
   }
 }
