@@ -37,10 +37,6 @@
   }
 }
 
-body[page=home] {
-  display: none;
-}
-
 .page__body {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -491,6 +487,7 @@ h3 {
 }
 .card--map .map--wide .map__wrapper {
   background-position: 50% 30%;
+  background-size: contain;
 }
 .card--map .map__wrapper {
   position: relative;
@@ -498,7 +495,7 @@ h3 {
   left: 0;
   max-width: 100%;
   width: 100%;
-  height: 100vh;
+  height: 50vw;
   background-image: url(../img/world-map.png);
   background-repeat: no-repeat;
   background-position: 80% 30%;
@@ -1804,6 +1801,9 @@ section:focus {
 }
 .gallery__header {
   display: flex;
+  position: sticky;
+  top: 0;
+  background-color: #f2f6fa;
   justify-content: space-between;
   padding: 20px;
 }
