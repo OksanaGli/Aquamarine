@@ -2,17 +2,38 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  @include media-desktop-medium {
+    flex-direction: row-reverse;         
+  }
   
   &__list {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     margin-top: 5px;
+
+    @include media-desktop-medium {
+      gap: 5px;
+      margin-top: 0;         
+    }
   }
 
   &__item:not(:hover) .navigation__image {
     display: none;
   }
+
+
+  &__item {
+    &--projects {
+      display: none;
+
+      @include media-desktop-medium {
+        display: block;      
+      }
+    }
+  }
+  
     
   &__link {
     color: $color-inactive;

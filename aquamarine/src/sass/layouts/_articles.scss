@@ -4,6 +4,11 @@
   gap: 20px;  
   margin-bottom: 80px;
 
+  @include media-mobile {
+    flex-direction: column; 
+    gap: 80px;  
+  }
+
   &--last {
     margin-bottom: 0;
   }
@@ -13,6 +18,10 @@
     flex-direction: column;
     max-width: 49%;
     width: 100%;
+
+    @include media-mobile {
+      max-width: 100%;  
+    }
   }
 
   &__picture {
@@ -108,12 +117,20 @@
     display: flex;
     justify-content: space-between;
     gap: 20px;
+
+    @include media-mobile {
+      flex-direction: column;        
+    }
   }
 
   &__signature-wrapper,
   &__text-wrapper {
     max-width: 49%;
     width: 100%;
+
+    @include media-mobile {
+     max-width: 100%;       
+    }
   }
 }
 
@@ -139,6 +156,10 @@
       max-width: 49%;
       width: 100%;
       align-self: flex-end;
+
+      @include media-mobile {
+       max-width: 100%;       
+      }
     }
   }
 
@@ -154,12 +175,20 @@
     justify-content: space-between;
     gap: 20px;
 
+    @include media-mobile {
+      flex-direction: column;        
+    }
+
     &--column {
       flex-direction: column;    
       gap: 0;
       max-width: 49%;
       width: 100%;
       align-self: flex-end;
+
+      @include media-mobile {
+       max-width: 100%;       
+      }
     }
   }
 
@@ -183,6 +212,10 @@
   &__text-wrapper {
     max-width: 49%;
     width: 100%;
+
+    @include media-mobile {
+     max-width: 100%;       
+    }
   }
 
   &-text {

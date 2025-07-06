@@ -24,10 +24,12 @@
   align-items: flex-start;
   gap: 2px;
   max-width: 49%;
-  width: 100%; 
+  width: 100%;
 
-  &--gallery {
-    max-width: none;
+  @include media-mobile-medium {
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 100%;
   }
 }
 
@@ -53,17 +55,52 @@
   &--single {
     margin-top: 4px;
 
-    .card__item {
-      height: calc(100vh - 60px);        
+    @include media-desktop-medium {
+      margin-top:0;       
+      
+      .projects-card__list { 
+        gap: 20px;
+      }
+    }    
+
+    .projects__title {
+      @include media-desktop-medium {        
+        height: 48.5vh;
+      }
+
+      @include media-mobile {
+        height: 49.5vh;
+      }
+    }
+
+    .card__item {    
+      display: flex;  
+      flex-direction: column;
+      height: calc(100vh - 60px);  
+      
+      @include media-desktop-medium {          
+        min-height: fit-content;       
+      }
     }
 
     .card__image-wrapper {
       margin-bottom: 10px;
+      margin-left: -20px;
+      margin-right: -20px;
+
+      @include media-mobile {
+        margin-left: -10px;
+        margin-right: -10px;       
+      }
     }
 
     .card__wrapper {        
       justify-content: space-between;
-      gap: 17px;              
+      gap: 17px; 
+      
+      @include media-mobile-medium {
+        flex-direction:column-reverse;        
+      }
     } 
 
     .card__location-wrapper {      
@@ -71,6 +108,10 @@
       max-width: 49%;    
       width: 100%;  
       margin-top: 7px; 
+
+      @include media-mobile-medium {
+        max-width: 100%;       
+      }
     }
 
     .card__location {
@@ -100,6 +141,16 @@
 
   &--list {
     margin-top: 60px; 
+
+    @include media-desktop-medium {          
+      margin-top: 0;      
+    }
+
+    .projects__title {
+      @include media-desktop-medium {        
+        height: 69vh;
+      }
+    }
 
     .card__item {
       display: flex; 
@@ -176,7 +227,7 @@
       top: 0;
       left: 70px;  
       display: flex;
-      max-width: 46%;
+      max-width: calc(50vw - 70px);
       width: 100%;
       height: auto;
       min-height: 100vh;
@@ -185,10 +236,11 @@
       background-image: url(../img/grid.png), url(../img/grid-h.png);  
       background-repeat: no-repeat;
       @extend %transition;
-      overflow: hidden;    
-
-      @include media-desktop {
-        max-width: 45%;
+      overflow: hidden;  
+      
+      @include media-desktop-medium {          
+        max-width: 100%;
+        left: 0;    
       }
 
       &__button {

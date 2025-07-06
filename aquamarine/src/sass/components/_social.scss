@@ -1,6 +1,10 @@
 .social {
   gap: 30px;
   margin-bottom: 7px;
+
+  @include media-desktop-medium {
+    gap: 25px;         
+  }
 }
 
 .social__link {

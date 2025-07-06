@@ -1,7 +1,20 @@
 .concepts {
+
+  &__heading {
+    margin: 0 0 10px 0;
+    display: none;
+
+    @include media-mobile {      
+      display: block;      
+    }
+  }
   
   &__wrapper {
     margin-bottom: 60px;
+
+    @include media-mobile {      
+      margin-bottom: 30px;
+    }
   }
 
   &__description {
@@ -26,6 +39,11 @@
     &:last-child {
       margin-bottom: 0;
     }
+
+    @include media-mobile {
+      position: relative;
+      margin-bottom: 0;
+    }
   }
 
   &__title {
@@ -40,6 +58,52 @@
       position: absolute;
       left: 0;
       top: 100%;
+
+      @include media-mobile {    
+        top: 0; 
+        color: $color-inactive;             
+      }      
+    } 
+    
+    @include media-mobile {    
+      max-width: 80%;
+      color: $color-inactive;             
+    }  
+  }
+
+  &__button {
+    display: none;
+
+    @include media-mobile {    
+      position: absolute;    
+      display: flex; 
+      justify-content: flex-end;
+      align-items: center;
+      @include font($size: 1.5rem, $height: 2.0rem, $weight: 700);
+      font-family: "Oceanic-Grotesk", "Arial", sans-serif;
+      color: $color-inactive;    
+      width: 40px;
+      height: 20px;
+      top: 20px;
+      right: 0;
+      padding: 0;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+
+      &::before {
+        content: "+";
+      }
+    }
+  }
+
+  &__content {
+    @include media-mobile {
+      min-height: 0;
+      height: 0;
+      overflow: hidden;
+      transition: all .5s ease-out;
+      opacity: 0;
     }
   }
 
@@ -82,12 +146,30 @@
   &__picture {
     position: absolute;    
     top: 50%;
-    left: 26.5625%;    
+    left: 26.99%;    
     transform: translate(-50%, -50%);
-    max-width: 46%;   
+    max-width: calc(50vw - 70px);   
     display: flex;
     justify-content: center;
-    align-items: center;       
+    align-items: center;  
+    z-index: 850;
+    
+    @media(max-width: 1920px) {
+      left: 26.5625%; 
+    }
+
+    @include media-desktop {
+      left: 27.15%; 
+    }
+
+    @include media-desktop-medium {
+      position: relative;
+      top: 0; 
+      left: 0;
+      transform: none; 
+      max-width: 100%; 
+      margin-top: 20px;       
+    }
   }     
 
   &__images {
@@ -99,6 +181,10 @@
 
   &__item:not(:hover) .concepts__picture {
     display: none;
+
+    @include media-desktop-medium {
+      display: block;
+    }
   }
 }
 
@@ -117,4 +203,39 @@
 
 .concepts__picture {
   animation: fadeIn 500ms cubic-bezier(0, 0, 0.2, 1) forwards;
+}
+
+.concepts__item {
+  @include media-mobile {
+    &:hover,
+    &:focus-within {
+      margin-bottom: 40px;
+
+      .concepts__content {
+        height: auto;
+        opacity: 1;
+      }
+
+      .concepts__title {
+        color: $color-active;
+
+        &::before {
+          color: $color-active;
+        }
+      }
+
+      .concepts__button {
+        &::after {
+          content: "";
+          width: 6px;
+          height: 1px;
+          background-color: $color-active;
+        }
+
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
 }

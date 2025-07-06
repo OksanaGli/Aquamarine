@@ -6,20 +6,71 @@
   overflow-y: auto;   
   scrollbar-width: none;      
   -ms-overflow-style: none; 
+
   &::-webkit-scrollbar {
     display: none;      
+  }
+
+  .footer {
+    justify-self: flex-end;
+  }
+
+  @include media-desktop-medium {
+    height: auto;
+    overflow-y: hidden; 
+  }
+
+  @include media-desktop-medium {
+    //display: none;    
   }
 }
 
 .pages {
 
-  &__header {    
+  &__header {
+    display: flex;   
+    flex-direction: column;
     height: 100vh;
+
+    @include media-desktop-medium {    
+      height: calc(100vh - 70px);
+    }
+
+    @include media-mobile {   
+      height: calc(100vh - 52px);
+    }
 
     &--about {
       padding-top: 35px;    
       margin-bottom: 56px; 
-    }    
+
+      @include media-desktop-medium {
+        padding-top: 5px;
+      }
+
+      @include media-mobile {   
+        padding-top: 0; 
+        margin-bottom: 80px;
+        .pages__description { 
+          order: 2; 
+        }
+        .pages__title-wrapper { 
+          order: 1; 
+        }
+      }
+    } 
+    
+    &--services {
+      @include media-desktop-medium {    
+        height: calc(100vh - 137px);
+      }
+    } 
+    
+    &--articles {
+      @include media-desktop-medium {
+        height: calc(100vh - 110px);
+      }
+    }
   }
 
   &__description,
@@ -40,15 +91,43 @@
       padding-top: 41vh;    
       align-items: center;   
       justify-content: space-between;  
-    }  
-    
+
+      @include media-desktop-medium {
+        height: 49.5vh;
+        padding-top: 38vh; 
+      }
+
+      @include media-mobile {   
+        height: 39vh;
+        padding-top: 35vh;
+      }  
+    }
+
     &--articles {     
       height: calc(100vh - 49vh - 40px);
     }   
+
+    &--services {
+      @include media-desktop-medium {       
+        padding-top: 40vh; 
+      }
+    }
   }
   
   &__scroll {    
     @include font($size: 1.2rem, $height: 1.5rem);  
     text-transform: uppercase;
+
+    @include media-mobile {    
+      display: none;
+    }
+  }  
+
+  @include media-desktop-medium {    
+    padding: 0 20px;
+  }
+
+  @include media-mobile {    
+    padding: 0 10px;
   }  
 }

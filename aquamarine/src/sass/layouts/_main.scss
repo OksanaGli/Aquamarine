@@ -1,10 +1,18 @@
 .main {
   position: relative;
   overflow-x: hidden;
+  //overflow-y: hidden;
   display: grid;
   grid-template-columns: 70px minmax(320px, 1fr) 20px minmax(320px, 1fr) 70px;
   width: 100%;
   min-height: 100vh;  
+
+  @include media-desktop-medium {
+    display: flex;
+    flex-direction: column-reverse;
+    //overflow-x: visible;
+    overflow-y: hidden;
+  }
 }
 
 .filter-icons {
