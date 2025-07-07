@@ -172,6 +172,11 @@ h3 {
     z-index: 1000;
   }
 }
+@media (max-width: 1200px) {
+  .filter-icons {
+    display: none;
+  }
+}
 @media (max-width: 394px) {
   .filter-icons {
     padding: 15px 10px 16px 10px;
@@ -359,9 +364,6 @@ h3 {
 }
 .card--single .card__description--single {
   display: none;
-}
-.card--single .card__description--list {
-  white-space: nowrap;
 }
 .card--single .map,
 .card--single .carousel {
