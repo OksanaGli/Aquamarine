@@ -30,6 +30,138 @@
         </button>
       </div>
 
+      <!-- Начало кода галлереи-->
+
+      <style>
+          img:not([src]) {
+              visibility: hidden; /* Hides the element but keeps its space in the layout */
+          }
+          .main {
+              /*grid-template-columns: 70px minmax(660px, 2fr) 70px !important;*/
+          }
+
+          #gallerypic-display-area {
+              position: relative;
+              grid-column: 1 / -1;
+              grid-row: 1;
+              width: 100%;
+              height: 100vh;
+              overflow: hidden;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              z-index: 1500;
+              background-color: #f2f6fa;
+          }
+
+          #gallery-mainImage {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              position: absolute;
+              top: 0; left: 0;
+              z-index: 1;
+          }
+
+          .gallerypic-button {
+            position: absolute;
+            top: 20px;
+            box-sizing: border-box;
+            width: 148px;
+            padding: 7.5px 40px;
+            background-color: transparent;
+            text-decoration: none;
+            border: 1px solid #2c4259;
+            color: #2c4259;
+            border-radius: 30px;
+          }
+
+          .enter-button {
+            font-family: "Oceanic-Grotesk", "Arial", sans-serif;
+            font-size: 1.2rem;
+            line-height: 1.5rem;
+            font-weight: 400;
+            text-transform: uppercase;            
+          }
+
+          .expanding-image {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              height: 100%;
+              width: 0;
+              object-fit: cover;
+              transition: width 0.8s ease;
+              z-index: 3;
+          }
+
+          /* Thumbnails wrapper with high z-index */
+          #thumbnails-wrapper {
+              position: absolute;
+              bottom: calc(100vh - 20px);
+              width: 100%;
+              /*z-index: 100;*/
+              overflow: hidden;
+              height: 180px; /* optional */
+              z-index: 1600;
+          }
+
+          #thumbnails {
+              display: flex;
+              gap: 150px; /* space between thumbnails */
+              transition: all 0.5s ease;
+          }
+
+          .thumbnail {
+              flex: 0 0 auto;
+              width: 120px;
+              height: 80px;
+              object-fit: cover;
+              cursor: pointer;
+              border: 2px solid transparent;
+              transition: all 0.3s;
+          }
+
+          .thumbnail.selected {
+              border: 4px solid #AAA;
+              transform: scale(1.2);
+              margin-top: 10px;
+          }
+
+          .arc-container {
+              position: relative;
+              width: 900px;
+              height:900px;
+              scale:0.5;
+              overflow: visible;
+
+          }
+          .arc-wrapper {
+              transition: opacity 1s ease-in-out;
+              position: absolute;
+              transform: translate(-50%, -50%);
+          }
+
+          
+
+
+      </style>
+
+      <div id="gallerypic-display-area">
+          <a class="gallerypic-button" href="#"><span class="enter-button">enter site</span></a>
+          <img id="gallery-mainImage" alt="Main" />
+          <div class="arc-container" id="arcContainer"> <div id="letters-tray"
+              style="position:absolute; left:0; bottom:0; width:100%; height:0px;
+              overflow:visible; pointer-events:none; background:red;"></div></div>        
+      </div>
+
+      <div id="thumbnails-wrapper">
+          <div id="thumbnails"></div>
+      </div>
+
+      <!-- Конец кода галлереи-->
+
       <section class="projects active projects--map projects--map-wide">
         <button class="projects__selection" type="button">ALL PROJECTS</button>
         <div class="projects__panel projects__panel--opened">        
@@ -159,8 +291,8 @@
                   <div class="card__construction">             
                     <h2 class="card__title heading">Aqaba Aquarium + Science hub</h2> 
                     <p class="card__description card__description--single">In progress<span>—</span></p>  
-                  </div>                
-                </div>                                           
+                  </div>
+                </div>
               </div>
             </li>
             <li class="card__item">
@@ -241,6 +373,9 @@
               </div>
             </li>
           </ul>
+          <div class="footer footer-projects">
+            <p class="footer__text">©2025 Aquamarine. All Rights Reserved</p>
+          </div> 
           <div class="map map--wide">            
             <div class="map__wrapper">  
               <button class="map__button" type="button"></button>         
@@ -312,94 +447,94 @@
               <div class="map__pin" style="left:21.9%; top:51.3%">
                 <div class="map__pin-circle"></div>
               </div>
-            </div> 
-            <div class="map__carousel-wrapper carousel">
-              <a class="carousel__title" href="#">More</a>
-              <h3 class="carousel__subtitle">Galactika Sports and Cultural Complex</h3>
-              <ul class="carousel__list reset-list">
-                <li class="carousel__item">
-                  <picture class="carousel__picture">                    
-                    <img class="carousel__images" src="./src/img/carousel/carousel-1.png" alt="Carousel photo.">
-                  </picture>
-                  <picture class="carousel__picture">                    
-                    <img class="carousel__images" src="./src/img/carousel/carousel-1.png" alt="Carousel photo.">
-                  </picture>
-                </li>
-                <li class="carousel__item">
-                  <picture class="carousel__picture">                    
-                    <img class="carousel__images" src="./src/img/carousel/carousel-1.png" alt="Carousel photo.">
-                  </picture>                  
-                </li>
-                <li class="carousel__item">
-                  <picture class="carousel__picture">                    
-                    <img class="carousel__images" src="./src/img/carousel/carousel-2.png" alt="Carousel photo.">
-                  </picture>                  
-                </li>
-                <li class="carousel__item">
-                  <picture class="carousel__picture">                    
-                    <img class="carousel__images" src="./src/img/carousel/carousel-3.png" alt="Carousel photo.">
-                  </picture>
-                  <picture class="carousel__picture">                    
-                    <img class="carousel__images" src="./src/img/carousel/carousel-4.png" alt="Carousel photo.">
-                  </picture>
-                </li>
-                <li class="carousel__item">
-                  <picture class="carousel__picture">                    
-                    <img class="carousel__images" src="./src/img/carousel/carousel-5.png" alt="Carousel photo.">
-                  </picture>
-                  <picture class="carousel__picture">                    
-                    <img class="carousel__images" src="./src/img/carousel/carousel-6.png" alt="Carousel photo.">
-                  </picture>
-                  <picture class="carousel__picture">                    
-                    <img class="carousel__images" src="./src/img/carousel/carousel-7.png" alt="Carousel photo.">
-                  </picture>
-                  <picture class="carousel__picture">                    
-                    <img class="carousel__images" src="./src/img/carousel/carousel-8.png" alt="Carousel photo.">
-                  </picture>
-                  <picture class="carousel__picture">                    
-                    <img class="carousel__images" src="./src/img/carousel/carousel-9.png" alt="Carousel photo.">
-                  </picture>
-                  <picture class="carousel__picture">                    
-                    <img class="carousel__images" src="./src/img/carousel/carousel-10.png" alt="Carousel photo.">
-                  </picture>
-                </li>
-                <li class="carousel__item">
-                  <picture class="carousel__picture">                    
-                    <img class="carousel__images" src="./src/img/carousel/carousel-10.png" alt="Carousel photo.">
-                  </picture>                  
-                </li>
-                <li class="carousel__item">
-                  <picture class="carousel__picture">                    
-                    <img class="carousel__images" src="./src/img/carousel/carousel-10.png" alt="Carousel photo.">
-                  </picture>                  
-                </li>
-                <li class="carousel__item">
-                  <picture class="carousel__picture">                    
-                    <img class="carousel__images" src="./src/img/carousel/carousel-10.png" alt="Carousel photo.">
-                  </picture>                  
-                </li>
-                <li class="carousel__item">
-                  <picture class="carousel__picture">                   
-                    <img class="carousel__images" src="./src/img/carousel/carousel-10.png" alt="Carousel photo.">
-                  </picture>                  
-                </li>
-                <li class="carousel__item">
-                  <picture class="carousel__picture">                    
-                    <img class="carousel__images" src="./src/img/carousel/carousel-10.png" alt="Carousel photo.">
-                  </picture>                  
-                </li>
-                <li class="carousel__item">
-                  <picture class="carousel__picture">                    
-                    <img class="carousel__images" src="./src/img/carousel/carousel-10.png" alt="Carousel photo.">
-                  </picture>                  
-                </li>
-                <li class="carousel__item">
-                  <picture class="carousel__picture">                    
-                    <img class="carousel__images" src="./src/img/carousel/carousel-10.png" alt="Daejeon Aquarium.">
-                  </picture>                  
-                </li>
-              </ul>
-            </div>          
+            </div>
+          </div>
+          <div class="map__carousel-wrapper carousel">
+            <a class="carousel__title" href="#">More</a>
+            <h3 class="carousel__subtitle">Galactika Sports and Cultural Complex</h3>
+            <ul class="carousel__list reset-list">
+              <li class="carousel__item">
+                <picture class="carousel__picture">                    
+                  <img class="carousel__images" src="./src/img/carousel/carousel-1.png" alt="Carousel photo.">
+                </picture>
+                <picture class="carousel__picture">                    
+                  <img class="carousel__images" src="./src/img/carousel/carousel-1.png" alt="Carousel photo.">
+                </picture>
+              </li>
+              <li class="carousel__item">
+                <picture class="carousel__picture">                    
+                  <img class="carousel__images" src="./src/img/carousel/carousel-1.png" alt="Carousel photo.">
+                </picture>                  
+              </li>
+              <li class="carousel__item">
+                <picture class="carousel__picture">                    
+                  <img class="carousel__images" src="./src/img/carousel/carousel-2.png" alt="Carousel photo.">
+                </picture>                  
+              </li>
+              <li class="carousel__item">
+                <picture class="carousel__picture">                    
+                  <img class="carousel__images" src="./src/img/carousel/carousel-3.png" alt="Carousel photo.">
+                </picture>
+                <picture class="carousel__picture">                    
+                  <img class="carousel__images" src="./src/img/carousel/carousel-4.png" alt="Carousel photo.">
+                </picture>
+              </li>
+              <li class="carousel__item">
+                <picture class="carousel__picture">                    
+                  <img class="carousel__images" src="./src/img/carousel/carousel-5.png" alt="Carousel photo.">
+                </picture>
+                <picture class="carousel__picture">                    
+                  <img class="carousel__images" src="./src/img/carousel/carousel-6.png" alt="Carousel photo.">
+                </picture>
+                <picture class="carousel__picture">                    
+                  <img class="carousel__images" src="./src/img/carousel/carousel-7.png" alt="Carousel photo.">
+                </picture>
+                <picture class="carousel__picture">                    
+                  <img class="carousel__images" src="./src/img/carousel/carousel-8.png" alt="Carousel photo.">
+                </picture>
+                <picture class="carousel__picture">                    
+                  <img class="carousel__images" src="./src/img/carousel/carousel-9.png" alt="Carousel photo.">
+                </picture>
+                <picture class="carousel__picture">                    
+                  <img class="carousel__images" src="./src/img/carousel/carousel-10.png" alt="Carousel photo.">
+                </picture>
+              </li>
+              <li class="carousel__item">
+                <picture class="carousel__picture">                    
+                  <img class="carousel__images" src="./src/img/carousel/carousel-10.png" alt="Carousel photo.">
+                </picture>                  
+              </li>
+              <li class="carousel__item">
+                <picture class="carousel__picture">                    
+                  <img class="carousel__images" src="./src/img/carousel/carousel-10.png" alt="Carousel photo.">
+                </picture>                  
+              </li>
+              <li class="carousel__item">
+                <picture class="carousel__picture">                    
+                  <img class="carousel__images" src="./src/img/carousel/carousel-10.png" alt="Carousel photo.">
+                </picture>                  
+              </li>
+              <li class="carousel__item">
+                <picture class="carousel__picture">                   
+                  <img class="carousel__images" src="./src/img/carousel/carousel-10.png" alt="Carousel photo.">
+                </picture>                  
+              </li>
+              <li class="carousel__item">
+                <picture class="carousel__picture">                    
+                  <img class="carousel__images" src="./src/img/carousel/carousel-10.png" alt="Carousel photo.">
+                </picture>                  
+              </li>
+              <li class="carousel__item">
+                <picture class="carousel__picture">                    
+                  <img class="carousel__images" src="./src/img/carousel/carousel-10.png" alt="Carousel photo.">
+                </picture>                  
+              </li>
+              <li class="carousel__item">
+                <picture class="carousel__picture">                    
+                  <img class="carousel__images" src="./src/img/carousel/carousel-10.png" alt="Daejeon Aquarium.">
+                </picture>                  
+              </li>
+            </ul>
           </div>
 
           <div class="projects__page projects__page--active gallery">
@@ -747,33 +882,51 @@
             <div class="menu__navigation navigation">
               <ul class="navigation__list reset-list">
                 <li class="navigation__item">
-                  <a class="navigation__link heading heading--upper navigation--current" href="#">About         
-                    <img class="navigation__image" src="./src/img/navigation/about.png" width="180" height="159" alt="About.">
+                  <a class="navigation__link heading heading--upper navigation--current" href="#">About
+                    <picture>
+                      <source media="(max-width: 394px)" srcset="./src/img/navigation/about.png" width="120" height="106">
+                      <img class="navigation__image" src="./src/img/navigation/about.png" width="180" height="159" alt="About.">
+                    </picture>
                   </a>
                 </li>
                 <li class="navigation__item navigation__item--projects">
-                  <a class="navigation__link heading heading--upper" href="#">Projects         
-                    <img class="navigation__image" src="./src/img/navigation/projects.png" width="180" height="101" alt="Projects.">
+                  <a class="navigation__link heading heading--upper" href="#">Projects
+                    <picture>
+                      <source media="(max-width: 394px)" srcset="./src/img/navigation/projects.png" width="120" height="68">                     
+                      <img class="navigation__image" src="./src/img/navigation/projects.png" width="180" height="101" alt="Projects.">
+                    </picture>
                   </a>
                 </li>
                 <li class="navigation__item">
-                  <a class="navigation__link heading heading--upper" href="#">Services      
-                    <img class="navigation__image" src="./src/img/navigation/services.png" width="180" height="101" alt="Services.">
+                  <a class="navigation__link heading heading--upper" href="#">Services
+                    <picture>
+                      <source media="(max-width: 394px)" srcset="./src/img/navigation/services.png" width="120" height="67">       
+                      <img class="navigation__image" src="./src/img/navigation/services.png" width="180" height="101" alt="Services.">
+                    </picture>
                   </a>
                 </li>
                 <li class="navigation__item">
-                  <a class="navigation__link heading heading--upper" href="articles.html">Articles          
-                    <img class="navigation__image" src="./src/img/navigation/articles.png" width="180" height="101" alt="Articles .">
+                  <a class="navigation__link heading heading--upper" href="articles.html">Articles
+                    <picture>
+                      <source media="(max-width: 394px)" srcset="./src/img/navigation/articles.png" width="120" height="67">          
+                      <img class="navigation__image" src="./src/img/navigation/articles.png" width="180" height="101" alt="Articles .">
+                    </picture>
                   </a>
                 </li>
                 <li class="navigation__item">
-                  <a class="navigation__link heading heading--upper" href="#">Media library       
-                    <img class="navigation__image" src="./src/img/navigation/library.png" width="180" height="257" alt="Media library.">
+                  <a class="navigation__link heading heading--upper" href="#">Media library
+                    <picture>
+                      <source media="(max-width: 394px)" srcset="./src/img/navigation/library.png" width="120" height="172">       
+                      <img class="navigation__image" src="./src/img/navigation/library.png" width="180" height="257" alt="Media library.">
+                    </picture>
                   </a>
                 </li>
                 <li class="navigation__item">
-                  <a class="navigation__link heading heading--upper" href="#">Contacts     
-                    <img class="navigation__image" src="./src/img/navigation/contacts.png" width="180" height="180" alt="Contacts.">
+                  <a class="navigation__link heading heading--upper" href="#">Contacts
+                    <picture>
+                      <source media="(max-width: 394px)" srcset="./src/img/navigation/contacts.png" width="120" height="120">     
+                      <img class="navigation__image" src="./src/img/navigation/contacts.png" width="180" height="180" alt="Contacts.">
+                    </picture>
                   </a>
                 </li>
               </ul>
