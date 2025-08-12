@@ -6,6 +6,10 @@
   @include media-desktop-medium {
     flex-direction: row-reverse;         
   }
+
+  @include media-mobile {
+    padding-left: 5px;
+  }
   
   &__list {
     display: flex;
@@ -47,8 +51,8 @@
   
   &__image {
     position: absolute;
-    top: 44%;
-    right: 41%; 
-    transform: translateY(-50%)
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%);
   }
 }
