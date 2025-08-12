@@ -9,3 +9,11 @@
     margin: 0;    
   }
 }
+
+.footer-projects {
+  display: none;
+
+  @include media-desktop-medium {
+    display: flex;
+  }
+}
