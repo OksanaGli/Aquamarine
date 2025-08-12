@@ -48,6 +48,13 @@
   &__link {
     @include font($size: 1.5rem, $height: 2.0rem, $weight: 700);
     color: $color-active;
+
+    @include media-hover {
+      &:hover {          
+        color: $color-inactive;
+        transition: all .5s ease-out;
+      }        
+    }
   }  
 }
 

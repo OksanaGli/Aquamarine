@@ -23,6 +23,18 @@
   @include media-desktop-medium {
     //display: none;    
   }
+
+  &--services {
+    @include media-desktop-medium {
+      height: 100vh;
+      overflow-y: auto; 
+    }
+
+    @include media-mobile {
+      height: auto;
+      overflow-y: hidden; 
+    }
+  }
 }
 
 .pages {

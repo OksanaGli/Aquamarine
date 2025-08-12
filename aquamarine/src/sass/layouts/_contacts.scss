@@ -125,9 +125,11 @@
     @extend %font;
     cursor: pointer;
 
-    &:hover {
-      background-color: $color-active;
-      @extend %transition;
+    @include media-hover {
+      &:hover {
+        background-color: $color-active;
+        transition: all .5s ease-out;
+      }
     }
   }
 
