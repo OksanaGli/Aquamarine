@@ -43,6 +43,10 @@
   @media (max-width: $tablet-width) { @content;}  
 }
 
+@mixin media-tablet-medium {
+  @media (max-width: $tablet-medium-width) { @content;}  
+}
+
 @mixin media-mobile-medium {
   @media (max-width: $mobile-medium-width) { @content;}  
 }
