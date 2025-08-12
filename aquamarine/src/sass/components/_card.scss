@@ -51,7 +51,8 @@
   margin: 0;    
 }
 
-.card {    
+.card {  
+  
   &--single {
     margin-top: 4px;
 
@@ -129,6 +130,16 @@
       }
     }
 
+    .card__construction {
+      @include media-hover {
+        &:hover {
+          cursor: pointer;
+          color: $color-inactive;
+          transition: all .5s ease-out;
+        }
+      }
+    }
+
     .map,
     .carousel {
       display: none;
@@ -149,27 +160,49 @@
     }
 
     .card__item {
+      position: relative;
       display: flex; 
       margin-bottom: 40px;           
-      gap: 20px;         
+      gap: 20px;
+      cursor: pointer;      
+      
+      @include media-mobile-medium {
+        flex-direction: column;  
+        gap: 10px;     
+      }
     }
 
     .card__image-wrapper {
-      width: 205px;
-      // height: auto;
+      width: 23%;
       overflow: hidden;
+
+      @include media-mobile-medium {        
+        width: 49%;     
+      }
     }
 
     .card__image {
       width: 100%;
       height: auto;
       display: block;
+      object-fit: cover;
     }
 
     .card__wrapper {
       flex: 1 1 0;
       max-width: 75%;
       width: 100%;
+
+      @include media-hover {
+        &:hover {
+          color: $color-inactive;
+          transition: all .5s ease-out;
+        }
+      }
+
+      @include media-mobile-medium {        
+        max-width: 100%;     
+      }
     }
     
     .card__tags {
@@ -179,7 +212,7 @@
     .card__location-wrapper {
       max-width: 100%;
       width: 100%;
-      gap: 20px
+      gap: 20px;
     }
 
     .card__location {      
@@ -187,7 +220,14 @@
       margin: 0;
       max-width: 31%;  
       width: 100%;    
-      box-sizing: border-box;      
+      box-sizing: border-box;
+      
+      @include media-mobile-medium {
+        position: absolute;
+        top: 0;
+        max-width: 50%;   
+        left: 51%; 
+      }
     }
 
     .card__construction {
@@ -220,10 +260,10 @@
   
     .map {      
       position: absolute;
-      top: 0;
+      top: 100vh;
       left: 70px;  
-      display: flex;
-      max-width: calc(50vw - 70px);
+      display: flex;      
+      transform: translateX(calc(-50vw - 70px));
       width: 100%;
       height: auto;
       min-height: 100vh;
@@ -235,14 +275,13 @@
       overflow: hidden;  
       
       @include media-desktop-medium {          
-        max-width: 100%;
-        left: 0;    
+        width: 1788px;   
       }
 
       &__button {
         position: absolute;
         top: 20px;
-        right: 20px;
+        right: calc(10vw + 30px);
         width: 28px;
         height: 28px;
         border-radius: 4px;
@@ -251,31 +290,39 @@
         background-image: url(../img/icon/map-arrow.svg);
         background-repeat: no-repeat;
         background-position: center;        
-        cursor: pointer;           
+        cursor: pointer;
+        
+        @include media-desktop-medium {          
+          display: none;
+        }  
       }
-
-      .carousel__list {
-        transform: translateX(-95%);
-      } 
-
+      
       &--wide {
         max-width: 100%;
+        transform: translateX(0);
         left: 0;
         @extend %transition; 
         z-index: 1005;
 
         .map__button {
           background-image: url(../img/icon/map-arrow.svg);
-          transform: rotate(180deg);          
+          transform: rotate(180deg); 
+          right: 20px;          
         }
 
-        .carousel__list {
-          transform: translateX(-17%);   
+        + .map__carousel-wrapper {
+          max-width: 100%;
+          @extend %transition;
+          left: 0;
+          transform: translateX(0);
+
+          .carousel__list {
+            transform: translateX(-17%);   
+          }
         }
 
         .map__wrapper {
-          background-position: 50% 30%; 
-          background-size: contain;
+          transform: translateX(0);          
         }
       }      
 
@@ -288,8 +335,41 @@
         height: 50vw; 
         background-image: url(../img/world-map.png);         
         background-repeat: no-repeat;
-        background-position: 80% 30%; 
-        overflow: visible;  
+        transform: translateX(10vw);
+        background-position: 85% 35px;        
+        @extend %transition;
+        background-size: contain;
+        overflow: visible;
+        
+        @include media-desktop-medium {       
+          top: 140px;
+          transform: translateX(0);
+          background-position: center;
+          background-size: cover;
+          width: 100%;
+          height: 985px;
+          overflow: visible;
+          left: 50%;
+          transform: translateX(-50%);   
+        }
+
+        @include media-laptop {
+          top: 90px;      
+          transform: translateX(-62%);   
+        }
+
+        @include media-tablet {        
+          transform: translateX(-69%);   
+        }
+
+        @include media-tablet-medium {
+          transform: translateX(-73%); 
+        }
+
+        @include media-mobile-medium {
+          top: 0;
+          transform: translateX(-85%); 
+        }
       }
 
       &__pin {
@@ -358,6 +438,10 @@
           opacity: 1;        
         }   
       }
+    }
+
+    .projects-card__list {
+      display: none;
     }
   }
 }
