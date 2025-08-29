@@ -476,10 +476,9 @@ h3 {
 }
 .card--map .map {
   position: absolute;
-  top: 100vh;
   left: 70px;
   display: flex;
-  transform: translateX(calc(-50vw - 70px));
+  transform: translateX(calc(-50vw - 110px));
   z-index: 800;
   background-color: #f2f6fa;
   background-image: url(../img/grid.png), url(../img/grid-h.png);
@@ -489,105 +488,88 @@ h3 {
 @media screen and (min-width: 2501px) {
   .card--map .map {
     left: 0;
-    transform: translateX(calc(-2500px + 50vw));
-    width: 2500px;
-    height: 1406px;
+    transform: translateX(calc(-100% + 50vw));
+    width: 100%;
   }
 }
 @media screen and (max-width: 2500px) {
   .card--map .map {
     width: 2500px;
-    height: 1406px;
   }
 }
 @media screen and (max-width: 2400px) {
   .card--map .map {
     width: 2400px;
-    height: 1350px;
   }
 }
 @media screen and (max-width: 2300px) {
   .card--map .map {
     width: 2300px;
-    height: 1294px;
   }
 }
 @media screen and (max-width: 2200px) {
   .card--map .map {
     width: 2200px;
-    height: 1238px;
   }
 }
 @media screen and (max-width: 2100px) {
   .card--map .map {
     width: 2100px;
-    height: 1181px;
   }
 }
 @media screen and (max-width: 2000px) {
   .card--map .map {
     width: 2000px;
-    height: 1125px;
   }
 }
 @media screen and (max-width: 1920px) {
   .card--map .map {
     width: 1920px;
-    height: 1080px;
   }
 }
 @media screen and (max-width: 1800px) {
   .card--map .map {
     width: 1800px;
-    height: 1013px;
   }
 }
 @media screen and (max-width: 1700px) {
   .card--map .map {
     width: 1700px;
-    height: 956px;
   }
 }
 @media screen and (max-width: 1600px) {
   .card--map .map {
     width: 1600px;
-    height: 900px;
   }
 }
 @media screen and (max-width: 1500px) {
   .card--map .map {
     width: 1500px;
-    height: 844px;
   }
 }
 @media screen and (max-width: 1440px) {
   .card--map .map {
     width: 1440px;
-    height: 810px;
   }
 }
 @media screen and (max-width: 1400px) {
   .card--map .map {
     width: 1400px;
-    height: 788px;
   }
 }
 @media screen and (max-width: 1366px) {
   .card--map .map {
     width: 1366px;
-    height: 768px;
   }
 }
 @media screen and (max-width: 1300px) {
   .card--map .map {
     width: 1300px;
-    height: 731px;
   }
 }
 @media screen and (max-width: 1280px) {
   .card--map .map {
     width: 1280px;
-    height: 720px;
   }
 }
 @media (max-width: 1200px) {
@@ -631,6 +613,7 @@ h3 {
   .card--map .map--wide {
     left: 50%;
     transform: translateX(-50%);
+    width: 100%;
   }
 }
 .card--map .map--wide .map__button {
@@ -653,113 +636,23 @@ h3 {
   position: relative;
   top: 0;
   left: 0;
+  height: calc(100vh - 30px);
   background-image: url(../img/world-map.png);
   background-repeat: no-repeat;
   transform: translateX(10vw);
   background-position: 85% 35px;
-  background-size: contain;
   overflow: visible;
 }
 @media screen and (min-width: 2501px) {
   .card--map .map__wrapper {
-    width: 2500px;
-    height: 1406px;
+    width: 100%;
+    background-size: 100% 100vh;
   }
 }
-@media screen and (max-width: 2500px) {
+@media screen and (min-width: 1201px) and (max-width: 2500px) {
   .card--map .map__wrapper {
-    width: 2500px;
-    height: 1406px;
-  }
-}
-@media screen and (max-width: 2400px) {
-  .card--map .map__wrapper {
-    width: 2400px;
-    height: 1350px;
-  }
-}
-@media screen and (max-width: 2300px) {
-  .card--map .map__wrapper {
-    width: 2300px;
-    height: 1294px;
-  }
-}
-@media screen and (max-width: 2200px) {
-  .card--map .map__wrapper {
-    width: 2200px;
-    height: 1238px;
-  }
-}
-@media screen and (max-width: 2100px) {
-  .card--map .map__wrapper {
-    width: 2100px;
-    height: 1181px;
-  }
-}
-@media screen and (max-width: 2000px) {
-  .card--map .map__wrapper {
-    width: 2000px;
-    height: 1125px;
-  }
-}
-@media screen and (max-width: 1920px) {
-  .card--map .map__wrapper {
-    width: 1920px;
-    height: 1080px;
-  }
-}
-@media screen and (max-width: 1800px) {
-  .card--map .map__wrapper {
-    width: 1800px;
-    height: 1013px;
-  }
-}
-@media screen and (max-width: 1700px) {
-  .card--map .map__wrapper {
-    width: 1700px;
-    height: 956px;
-  }
-}
-@media screen and (max-width: 1600px) {
-  .card--map .map__wrapper {
-    width: 1600px;
-    height: 900px;
-  }
-}
-@media screen and (max-width: 1500px) {
-  .card--map .map__wrapper {
-    width: 1500px;
-    height: 844px;
-  }
-}
-@media screen and (max-width: 1440px) {
-  .card--map .map__wrapper {
-    width: 1440px;
-    height: 810px;
-  }
-}
-@media screen and (max-width: 1400px) {
-  .card--map .map__wrapper {
-    width: 1400px;
-    height: 788px;
-  }
-}
-@media screen and (max-width: 1366px) {
-  .card--map .map__wrapper {
-    width: 1366px;
-    height: 768px;
-  }
-}
-@media screen and (max-width: 1300px) {
-  .card--map .map__wrapper {
-    width: 1300px;
-    height: 731px;
-  }
-}
-@media screen and (max-width: 1280px) {
-  .card--map .map__wrapper {
-    width: 1280px;
-    height: 720px;
+    width: clamp(1201px, 100vw, 2500px);
+    background-size: clamp(1201px, 100vw, 2500px) 100vh;
   }
 }
 @media (max-width: 1200px) {
@@ -821,7 +714,7 @@ h3 {
   margin: 0;
   gap: 10px;
   top: -45px;
-  left: 46px;
+  right: -145px;
   font-size: 1.2rem;
   line-height: 1.5rem;
   font-weight: 700;
@@ -1438,11 +1331,17 @@ h3 {
   display: flex;
   gap: 10px;
   margin-right: 80px;
+  padding: 10px;
+  height: 90px;
+}
+.carousel__picture {
+  height: 90px;
+  display: block;
 }
 .carousel__images {
   display: block;
-  height: auto;
-  width: auto;
+  height: 100%;
+  width: 200px;
   object-fit: cover;
 }
 

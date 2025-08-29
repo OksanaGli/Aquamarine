@@ -260,103 +260,85 @@
   
     .map {      
       position: absolute;
-      top: 100vh;
       left: 70px;  
       display: flex;      
-      transform: translateX(calc(-50vw - 70px));
+      transform: translateX(calc(-50vw - 110px));
       z-index: 800;
       background-color: $color-background;
       background-image: url(../img/grid.png), url(../img/grid-h.png);  
       background-repeat: repeat;
       @extend %transition;
       overflow: hidden;
-      
+            
       @media screen and (min-width: 2501px) {
         left: 0;
-        transform: translateX(calc(-2500px + 50vw));
-        width: 2500px;
-        height: 1406px;        
+        transform: translateX(calc(-100% + 50vw));
+        width: 100%;              
       }
 
       @media screen and (max-width: 2500px) {
         width: 2500px;
-        height: 1406px;
       }
 
       @media screen and (max-width: 2400px) {
         width: 2400px;
-        height: 1350px;
       }
 
       @media screen and (max-width: 2300px) {
         width: 2300px;
-        height: 1294px;
       }
 
       @media screen and (max-width: 2200px) {
         width: 2200px;
-        height: 1238px;
       }
 
       @media screen and (max-width: 2100px) {
         width: 2100px;
-        height: 1181px;
       }
 
       @media screen and (max-width: 2000px) {
         width: 2000px;
-        height: 1125px;
       }
 
       @media screen and (max-width: 1920px) {
         width: 1920px;
-        height: 1080px;
       }
 
       @media screen and (max-width: 1800px) {
         width: 1800px;
-        height: 1013px;
       }
 
       @media screen and (max-width: 1700px) {
         width: 1700px;
-        height: 956px;
       }
 
       @media screen and (max-width: 1600px) {
         width: 1600px;
-        height: 900px;
       }
 
       @media screen and (max-width: 1500px) {
         width: 1500px;
-        height: 844px;
       }
 
       @media screen and (max-width: 1440px) {
         width: 1440px;
-        height: 810px;
       }
 
       @media screen and (max-width: 1400px) {
         width: 1400px;
-        height: 788px;
       }
 
       @media screen and (max-width: 1366px) {
         width: 1366px;
-        height: 768px;
       }
 
       @media screen and (max-width: 1300px) {
         width: 1300px;
-        height: 731px;
       }
 
       @media screen and (max-width: 1280px) {
         width: 1280px;
-        height: 720px;
-      }
+      } 
       
       @include media-desktop-medium {          
         top: 70px;
@@ -396,7 +378,8 @@
 
         @media screen and (min-width: 2501px) {          
           left: 50%;
-          transform: translateX(-50%); 
+          transform: translateX(-50%);
+          width: 100%;           
         }
 
         .map__button {
@@ -425,98 +408,24 @@
         position: relative;
         top: 0;
         left: 0;
+        height: calc(100vh - 30px);
         background-image: url(../img/world-map.png);         
         background-repeat: no-repeat;
         transform: translateX(10vw);
         background-position: 85% 35px;        
         @extend %transition;
-        background-size: contain;
         overflow: visible;
 
         @media screen and (min-width: 2501px) {
-          width: 2500px;
-          height: 1406px;          
-        }
+          width: 100%;
+          background-size: 100% 100vh;         
+        }        
 
-        @media screen and (max-width: 2500px) {
-          width: 2500px;
-          height: 1406px;
+        @media screen and (min-width: 1201px) and (max-width: 2500px) {          
+          width: clamp(1201px, 100vw, 2500px); 
+          background-size: clamp(1201px, 100vw, 2500px) 100vh;
         }
-
-        @media screen and (max-width: 2400px) {
-          width: 2400px;
-          height: 1350px;
-        }
-
-        @media screen and (max-width: 2300px) {
-          width: 2300px;
-          height: 1294px;
-        }
-
-        @media screen and (max-width: 2200px) {
-          width: 2200px;
-          height: 1238px;
-        }
-
-        @media screen and (max-width: 2100px) {
-          width: 2100px;
-          height: 1181px;
-        }
-
-        @media screen and (max-width: 2000px) {
-          width: 2000px;
-          height: 1125px;
-        }
-
-        @media screen and (max-width: 1920px) {
-          width: 1920px;
-          height: 1080px;
-        }
-
-        @media screen and (max-width: 1800px) {
-          width: 1800px;
-          height: 1013px;
-        }
-
-        @media screen and (max-width: 1700px) {
-          width: 1700px;
-          height: 956px;
-        }
-
-        @media screen and (max-width: 1600px) {
-          width: 1600px;
-          height: 900px;
-        }
-
-        @media screen and (max-width: 1500px) {
-          width: 1500px;
-          height: 844px;
-        }
-
-        @media screen and (max-width: 1440px) {
-          width: 1440px;
-          height: 810px;
-        }
-
-        @media screen and (max-width: 1400px) {
-          width: 1400px;
-          height: 788px;
-        }
-
-        @media screen and (max-width: 1366px) {
-          width: 1366px;
-          height: 768px;
-        }
-
-        @media screen and (max-width: 1300px) {
-          width: 1300px;
-          height: 731px;
-        }
-
-        @media screen and (max-width: 1280px) {
-          width: 1280px;
-          height: 720px;
-        }
+        
         
         @include media-desktop-medium {       
           top: 20px;
@@ -575,8 +484,8 @@
         flex-direction: column;
         margin: 0;
         gap: 10px;
-        top: -45px; 
-        left: 46px;          
+        top: -45px;
+        right: -145px;      
         @include font($size: 1.2rem, $height: 1.5rem, $weight: 700);  
         text-transform: uppercase;
         color: $color-active;

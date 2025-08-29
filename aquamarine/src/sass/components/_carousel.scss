@@ -45,12 +45,19 @@
     display: flex;
     gap: 10px;
     margin-right: 80px;
+    padding: 10px;
+    height: 90px;
+  }
+
+  &__picture {
+    height: 90px;
+    display: block;
   }
 
   &__images {
     display: block;   
-    height: auto;
-    width: auto;
+    height: 100%;
+    width: 200px;
     object-fit: cover;
   }
 }
