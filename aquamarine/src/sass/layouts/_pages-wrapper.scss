@@ -125,6 +125,13 @@
       }
     }
   }
+
+  &__title-wrapper_2 {
+    display: flex;
+    justify-content: center;
+    padding-top: 19px;
+    margin-bottom: 50px;
+  }
   
   &__scroll {    
     @include font($size: 1.2rem, $height: 1.5rem);  

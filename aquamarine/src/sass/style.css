@@ -2484,6 +2484,12 @@ section:focus {
     padding-top: 40vh;
   }
 }
+.pages__title-wrapper_2 {
+  display: flex;
+  justify-content: center;
+  padding-top: 19px;
+  margin-bottom: 50px;
+}
 .pages__scroll {
   font-size: 1.2rem;
   line-height: 1.5rem;
