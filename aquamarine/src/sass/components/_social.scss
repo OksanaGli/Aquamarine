@@ -1,0 +1,26 @@
+.social {
+  gap: 30px;
+  margin-bottom: 7px;
+
+  @include media-desktop-medium {
+    gap: 25px;         
+  }
+
+  @include media-mobile {
+    gap: 15px;
+    margin-bottom: 0;
+  }
+}
+
+.social__item {
+  @include media-mobile {
+    @include font($size: 1.2rem, $height: 1.5rem, $weight: 700);    
+  }
+}
+
+.social__link {
+  @include font($size: 1.2rem, $height: 1.5rem, $weight: 700);
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $color-active;
+}

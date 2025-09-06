@@ -1,0 +1,532 @@
+.card__image {
+  display: block;  
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card__image-wrapper {
+  display: block;
+}
+
+.card__wrapper {
+  display: flex;             
+} 
+
+.card__item > * {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.card__tags {    
+  display: flex;  
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  max-width: 49%;
+  width: 100%;
+
+  @include media-mobile-medium {
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 100%;
+  }
+}
+
+.card__location-wrapper {
+  display: flex;   
+}
+
+.card__construction {
+  display: flex;
+}
+
+.card__description {
+  @include font($size: 1.2rem, $height: 1.5rem, $weight: 700);
+  text-transform: uppercase;
+  margin: 0;  
+}
+
+.card__title {
+  margin: 0;    
+}
+
+.card {  
+  
+  &--single {
+    margin-top: 4px;
+
+    @include media-desktop-medium {
+      margin-top:0;       
+      
+      .projects-card__list { 
+        gap: 20px;
+      }
+    }    
+
+    .projects__title {
+      @include media-desktop-medium {        
+        height: 48.5vh;
+      }
+
+      @include media-mobile {
+        height: 49.5vh;
+      }
+    }
+
+    .card__item {    
+      display: flex;  
+      flex-direction: column;
+      height: calc(100vh - 60px);  
+      
+      @include media-desktop-medium {          
+        min-height: fit-content;       
+      }
+    }
+
+    .card__image-wrapper {
+      margin-bottom: 10px;
+      margin-left: -20px;
+      margin-right: -20px;
+
+      @include media-mobile {
+        margin-left: -10px;
+        margin-right: -10px;       
+      }
+    }
+
+    .card__wrapper {        
+      justify-content: space-between;
+      gap: 17px; 
+      
+      @include media-mobile-medium {
+        flex-direction:column-reverse;        
+      }
+    } 
+
+    .card__location-wrapper {      
+      flex-direction: column; 
+      max-width: 49%;    
+      width: 100%;  
+      margin-top: 7px; 
+
+      @include media-mobile-medium {
+        max-width: 100%;       
+      }
+    }
+
+    .card__location {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px;    
+      width: 100%;  
+    }  
+    
+    .card__description {
+      max-width: 49%;
+
+      &--single {        
+        display: none;
+      }
+    }
+
+    .card__construction {
+      @include media-hover {
+        &:hover {
+          cursor: pointer;
+          color: $color-inactive;
+          transition: all .5s ease-out;
+        }
+      }
+    }
+
+    .map,
+    .carousel {
+      display: none;
+    }
+  }
+
+  &--list {
+    margin-top: 60px; 
+
+    @include media-desktop-medium {          
+      margin-top: 0;      
+    }
+
+    .projects__title {
+      @include media-desktop-medium {        
+        height: 69vh;
+      }
+    }
+
+    .card__item {
+      position: relative;
+      display: flex; 
+      margin-bottom: 40px;           
+      gap: 20px;
+      cursor: pointer;      
+      
+      @include media-mobile-medium {
+        flex-direction: column;  
+        gap: 10px;     
+      }
+    }
+
+    .card__image-wrapper {
+      width: 23%;
+      overflow: hidden;
+
+      @include media-mobile-medium {        
+        width: 49%;     
+      }
+    }
+
+    .card__image {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    .card__wrapper {
+      flex: 1 1 0;
+      max-width: 75%;
+      width: 100%;
+
+      @include media-hover {
+        &:hover {
+          color: $color-inactive;
+          transition: all .5s ease-out;
+        }
+      }
+
+      @include media-mobile-medium {        
+        max-width: 100%;     
+      }
+    }
+    
+    .card__tags {
+      display: none;
+    }
+
+    .card__location-wrapper {
+      max-width: 100%;
+      width: 100%;
+      gap: 20px;
+    }
+
+    .card__location {      
+      display: flex;
+      margin: 0;
+      max-width: 31%;  
+      width: 100%;    
+      box-sizing: border-box;
+      
+      @include media-mobile-medium {
+        position: absolute;
+        top: 0;
+        max-width: 50%;   
+        left: 51%; 
+      }
+    }
+
+    .card__construction {
+      flex-direction: column;
+      flex: 1 1 0;
+    }
+  
+    .card__description span {
+      display: block;
+    }
+
+    .card__title {
+      @include font($size: 1.5rem, $height: 2.0rem, $weight: 700);
+      margin: 0 0 10px 0;       
+    }
+
+    .card__description {
+      &--list {
+        display: none;
+      }
+    }
+
+    .map,
+    .carousel {
+      display: none;
+    }
+  }
+
+  &--map {  
+  
+    .map {      
+      position: absolute;
+      left: 70px;  
+      display: flex;      
+      transform: translateX(calc(-50vw - 110px));
+      z-index: 800;
+      background-color: $color-background;
+      background-image: url(../img/grid.png), url(../img/grid-h.png);  
+      background-repeat: repeat;
+      @extend %transition;
+      overflow: hidden;
+            
+      @media screen and (min-width: 2501px) {
+        left: 0;
+        transform: translateX(calc(-100% + 50vw));
+        width: 100%;              
+      }
+
+      @media screen and (max-width: 2500px) {
+        width: 2500px;
+      }
+
+      @media screen and (max-width: 2400px) {
+        width: 2400px;
+      }
+
+      @media screen and (max-width: 2300px) {
+        width: 2300px;
+      }
+
+      @media screen and (max-width: 2200px) {
+        width: 2200px;
+      }
+
+      @media screen and (max-width: 2100px) {
+        width: 2100px;
+      }
+
+      @media screen and (max-width: 2000px) {
+        width: 2000px;
+      }
+
+      @media screen and (max-width: 1920px) {
+        width: 1920px;
+      }
+
+      @media screen and (max-width: 1800px) {
+        width: 1800px;
+      }
+
+      @media screen and (max-width: 1700px) {
+        width: 1700px;
+      }
+
+      @media screen and (max-width: 1600px) {
+        width: 1600px;
+      }
+
+      @media screen and (max-width: 1500px) {
+        width: 1500px;
+      }
+
+      @media screen and (max-width: 1440px) {
+        width: 1440px;
+      }
+
+      @media screen and (max-width: 1400px) {
+        width: 1400px;
+      }
+
+      @media screen and (max-width: 1366px) {
+        width: 1366px;
+      }
+
+      @media screen and (max-width: 1300px) {
+        width: 1300px;
+      }
+
+      @media screen and (max-width: 1280px) {
+        width: 1280px;
+      } 
+      
+      @include media-desktop-medium {          
+        top: 70px;
+        width: 1788px;
+        height: 985px;   
+      }
+
+      @include media-mobile {
+        display: none;      
+      }
+
+      &__button {
+        position: absolute;
+        top: 20px;
+        right: calc(10vw + 30px);
+        width: 28px;
+        height: 28px;
+        border-radius: 4px;
+        background-color: transparent;
+        border: 1px solid $color-active;
+        background-image: url(../img/icon/map-arrow.svg);
+        background-repeat: no-repeat;
+        background-position: center;        
+        cursor: pointer;
+        
+        @include media-desktop-medium {          
+          display: none;
+        }  
+      }
+      
+      &--wide {
+        transform: translateX(0);
+        left: 0;
+        top: 0;
+        @extend %transition; 
+        z-index: 1005;
+
+        @media screen and (min-width: 2501px) {          
+          left: 50%;
+          transform: translateX(-50%);
+          width: 100%;           
+        }
+
+        .map__button {
+          background-image: url(../img/icon/map-arrow.svg);
+          transform: rotate(180deg); 
+          right: 20px;          
+        }
+
+        + .map__carousel-wrapper {
+          max-width: 100%;
+          @extend %transition;
+          left: 0;
+          transform: translateX(0);
+
+          .carousel__list {
+            transform: translateX(-17%);   
+          }
+        }
+
+        .map__wrapper {
+          transform: translateX(0);          
+        }
+      }      
+
+      &__wrapper {
+        position: relative;
+        top: 0;
+        left: 0;
+        height: calc(100vh - 30px);
+        background-image: url(../img/world-map.png);         
+        background-repeat: no-repeat;
+        transform: translateX(10vw);
+        background-position: 85% 35px;        
+        @extend %transition;
+        overflow: visible;
+
+        @media screen and (min-width: 2501px) {
+          width: 100%;
+          background-size: 100% 100vh;         
+        }        
+
+        @media screen and (min-width: 1201px) and (max-width: 2500px) {          
+          width: clamp(1201px, 100vw, 2500px); 
+          background-size: clamp(1201px, 100vw, 2500px) 100vh;
+        }
+        
+        
+        @include media-desktop-medium {       
+          top: 20px;
+          transform: translateX(0);
+          background-position: center;
+          background-size: cover;
+          width: 100%;
+          height: 985px;
+          overflow: visible;
+          left: 50%;
+          transform: translateX(-50%);   
+        }
+
+        @include media-laptop {               
+          transform: translateX(-62%);   
+        }
+
+        @include media-tablet {        
+          transform: translateX(-69%);   
+        }
+
+        @include media-tablet-medium {
+          transform: translateX(-73%); 
+        }
+
+        @include media-mobile-medium {
+          top: 0;
+          transform: translateX(-85%); 
+        }
+      }
+
+      &__pin {
+        position: absolute;
+        display: flex;
+        cursor: pointer;
+        transform-origin: center;        
+      }
+
+      &__pin-circle {        
+        width: 10px;
+        height: 10px;
+        background-color: $color-active; 
+        border-radius: 50%;         
+        transition: transform 600ms cubic-bezier(0, 0, 0.2, 1);   
+      }
+
+      @include media-hover {
+        &__pin:hover .map__pin-circle {
+          transform: scale(2);
+        }
+      }
+
+      &__pin-mark {
+        position: absolute;
+        display: flex;        
+        flex-direction: column;
+        margin: 0;
+        gap: 10px;
+        top: -45px;
+        right: -145px;      
+        @include font($size: 1.2rem, $height: 1.5rem, $weight: 700);  
+        text-transform: uppercase;
+        color: $color-active;
+        white-space: nowrap;
+        transition: opacity 600ms cubic-bezier(0, 0, 0.2, 1);
+        opacity: 0;
+
+        &::before {
+          content: url(../img/icon/underline.svg);
+          position: absolute;
+          top: 16px;
+          right: 0;    
+          transition: opacity 600ms cubic-bezier(0, 0, 0.2, 1);      
+        }
+        
+        & span {       
+          position: relative;   
+          text-align: end;
+
+          &::before {
+            position: absolute;
+            content: "";
+            right: 12px;
+            bottom: 7px;
+            width: 11px;
+            height: 1px;
+            background-color: $color-active;
+            transition: opacity 600ms cubic-bezier(0, 0, 0.2, 1);
+          }
+        }
+      }
+
+      @include media-hover {        
+        &__pin:hover .map__pin-mark {
+          opacity: 1;        
+        }   
+      }
+    }
+
+    .projects-card__list {
+      display: none;
+    }
+  }
+}

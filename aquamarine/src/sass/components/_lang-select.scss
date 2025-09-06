@@ -1,0 +1,115 @@
+.lang-select {
+  position: relative;
+  display: flex;
+  gap: 4px;
+  @extend %font;
+  @include font($size: 1.5rem, $height: 2rem);
+  color: $color-active;
+  background-color: transparent;
+  border: none;
+  margin-bottom: 10px;
+  padding: 0;
+  width: 30px;
+  cursor: pointer;
+
+  @include media-desktop-medium {
+    margin-bottom: 0;
+  }
+
+  @include media-mobile {   
+    @include font($size: 1.2rem, $height: 1.5rem);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 24px;
+    top: 50%;
+    width: 6px;  
+    height: 4px;
+    background-image: url(../img/icon/triangle-down-small.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    transform: translateY(-50%) rotate(0deg);
+    pointer-events: none;
+    @extend %transition;
+  }
+}
+
+.menu__switch-language:hover .lang-select::after {
+  transform: translateY(-50%) rotate(180deg);  
+}
+
+.lang-select__list {
+  display: none;
+  position: absolute;  
+  top: 100%;
+  left: 0;
+  width: 30px;
+  
+  @include media-desktop-medium {
+    top: 0;
+    left: -40px;
+  }
+}
+
+.menu__switch-language:hover .lang-select__list {
+  display: block;   
+  pointer-events: auto;
+
+  @include media-desktop-medium {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 0;
+  }  
+}
+
+.lang-select__item {
+  opacity: 0;
+  transform: translateY(-10px);
+  animation-name: fadeInUp;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  animation-duration: 500ms;
+  animation-play-state: paused;  
+}
+
+.menu__switch-language:hover .lang-select__item {
+  animation-play-state: running;
+}
+
+.lang-select__item:nth-child(1) { 
+  animation-delay: 0ms; 
+}
+
+.lang-select__item:nth-child(2) { 
+  animation-delay: 150ms; 
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.lang-select__item {
+  margin-bottom: 10px;
+  color: $color-inactive;
+
+  @include media-desktop-medium {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 10px;
+  }  
+
+  @include media-mobile {   
+    @include font($size: 1.2rem, $height: 1.5rem);    
+  }
+}

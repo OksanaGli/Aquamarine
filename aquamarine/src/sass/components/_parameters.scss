@@ -1,0 +1,24 @@
+.parameters {
+
+  &__list {    
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;    
+  }
+  
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  &__description {
+    margin: 0;
+    width: 50%;    
+  }
+
+  &__image-wrapper {
+    display: flex;
+    max-width: 50%;
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "aquamarine",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "style": "sass --watch aquamarine/src/sass/style.scss aquamarine/src/sass/style.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OksanaGli/Aquamarine.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OksanaGli/Aquamarine/issues"
+  },
+  "homepage": "https://github.com/OksanaGli/Aquamarine#readme",
+  "devDependencies": {
+    "sass": "^1.88.0"
+  }
+}

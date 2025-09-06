@@ -1,0 +1,19 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 240px;
+  padding-bottom: 20px;
+  flex-shrink: 0;
+  &__text {
+    display: inline-block;
+    margin: 0;    
+  }
+}
+
+.footer-projects {
+  display: none;
+
+  @include media-desktop-medium {
+    display: flex;
+  }
+}

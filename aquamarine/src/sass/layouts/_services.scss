@@ -1,0 +1,33 @@
+.services {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  
+  &__title {
+    margin: 0 0 10px 0;
+  }
+
+  &__subtitle {
+    margin: 0 0 80px 0;
+  }
+
+  &__sidebar,
+  &__concepts {
+    display: flex;
+    flex-direction: column;
+    max-width: 49%;
+    width: 100%;
+  }
+  
+  @include media-mobile {
+    flex-direction: column;
+    gap: 0;    
+  }
+  
+  &__sidebar,
+  &__concepts {
+    @include media-mobile {    
+      max-width: 100%;
+    }
+  } 
+}

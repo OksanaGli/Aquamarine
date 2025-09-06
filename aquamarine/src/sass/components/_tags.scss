@@ -1,0 +1,7 @@
+.tag {
+  display: inline-block; 
+  @include font($size: 1.2rem, $height: 1.5rem);
+  padding: 7px 20px;
+  background-color: $color-tags;
+  border-radius: 20px;     
+}

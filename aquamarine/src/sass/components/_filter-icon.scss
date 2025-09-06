@@ -1,0 +1,59 @@
+.filter-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 21px 0 21px;
+  z-index: 990;
+  background-color: $color-background;
+
+  @include media-desktop-medium {
+    position: fixed;
+    max-width: 100%;
+    width: 100%;
+    padding: 24px 20px 25px 20px;
+    bottom: 0;
+    left: 0;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    background-color: $color-background;
+    z-index: 1000; 
+  }
+
+  @include media-desktop-medium {    
+    //display: none;
+  }
+
+  @include media-mobile {
+    padding: 15px 10px 16px 10px;
+  }
+}
+
+.filter-icons__button {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.icon {
+  width: 28px;
+  height: 21px;
+  display: block;
+  fill: $color-inactive; 
+
+  @include media-mobile {
+    width: 25px;
+    height: 19px;
+  }
+}
+
+.icon-active .icon {
+  fill: $color-active;
+}
+
+.filter-map {
+  @include media-mobile {    
+    display: none;    
+  }
+}
